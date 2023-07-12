@@ -10,7 +10,7 @@ import { CoreRoutingModule } from '../core/core-routing.module';
 import { HeaderComponent } from '../core/header/header.component';
 
 @NgModule({
-  declarations: [ListComponent, CreateComponent
+  declarations: [ListComponent, CreateComponent,
   ],
   imports: [
     CommonModule,
