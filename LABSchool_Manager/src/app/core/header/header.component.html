@@ -8,14 +8,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dashboard']">Inicio</a>
+              </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Início</a>
+            <a class="nav-link" [routerLink]="['/students']">Alunos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Alunos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acompanhamentos Pedagógicos</a>
+            <a class="nav-link" [routerLink]="['/pedagogic-support']">Acompanhamentos Pedagógicos</a>
           </li>
         </ul>
         <span class="navbar-text mr-3" style="margin-right: 50px;">
@@ -25,7 +25,8 @@
 
       </div>
     </div>
-  </nav>
+</nav>
+
   
   
   
