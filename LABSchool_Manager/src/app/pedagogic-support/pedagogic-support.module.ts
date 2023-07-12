@@ -5,17 +5,14 @@ import { PedagogicSupportRoutingModule } from './pedagogic-support-routing.modul
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
-
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [
-    ListComponent,
-    CreateComponent,
-    EditComponent
-  ],
+  declarations: [ListComponent, CreateComponent, EditComponent],
   imports: [
     CommonModule,
-    PedagogicSupportRoutingModule
+    PedagogicSupportRoutingModule,
+    CoreModule
   ]
 })
 export class PedagogicSupportModule { }
