@@ -1,4 +1,6 @@
-<div class="container">
+<app-header></app-header>
+
+<div class="container mt-5">
     <h1>Cadastro de Alunos</h1>
     <form>
         <input type="text" class="form-control" placeholder="Nome">
@@ -7,6 +9,8 @@
         <input type="text" class="form-control" placeholder="CPF">
         <input type="number" class="form-control" placeholder="Nota">
         <button class="btn btn-primary">Salvar</button>
+
+        <button routerLink="/students">Voltar para a lista de alunos</button>
     </form>
 </div>
 
