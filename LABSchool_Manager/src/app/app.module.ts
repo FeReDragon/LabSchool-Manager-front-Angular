@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    FormsModule
+    FormsModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
