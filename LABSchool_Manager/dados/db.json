@@ -1,0 +1,72 @@
+{
+    "alunos": [
+      {
+        "id": 1,
+        "nome": "João Silva",
+        "telefone": "(00) 9 9999-9999",
+        "dataNascimento": "1990-01-01",
+        "cpf": "111.111.111-11",
+        "nota": 8.5
+      },
+      {
+        "id": 2,
+        "nome": "Maria Souza",
+        "telefone": "(00) 9 8888-8888",
+        "dataNascimento": "1992-05-10",
+        "cpf": "222.222.222-22",
+        "nota": 7.8
+      },
+      {
+        "id": 3,
+        "nome": "Pedro Santos",
+        "telefone": "(00) 9 7777-7777",
+        "dataNascimento": "1995-09-15",
+        "cpf": "333.333.333-33",
+        "nota": 9.2
+      }
+    ],
+    "pedagogos": [
+      {
+        "id": 1,
+        "nome": "Ana Oliveira"
+      },
+      {
+        "id": 2,
+        "nome": "Carlos Ferreira"
+      },
+      {
+        "id": 3,
+        "nome": "Mariana Rodrigues"
+      }
+    ],
+    "acompanhamentos": [
+      {
+        "id": 1,
+        "alunoId": 1,
+        "pedagogoId": 1,
+        "data": "2023-07-10",
+        "titulo": "Acompanhamento 1",
+        "descricao": "Descrição do acompanhamento 1",
+        "finalizado": true
+      },
+      {
+        "id": 2,
+        "alunoId": 2,
+        "pedagogoId": 2,
+        "data": "2023-07-09",
+        "titulo": "Acompanhamento 2",
+        "descricao": "Descrição do acompanhamento 2",
+        "finalizado": false
+      },
+      {
+        "id": 3,
+        "alunoId": 3,
+        "pedagogoId": 3,
+        "data": "2023-07-08",
+        "titulo": "Acompanhamento 3",
+        "descricao": "Descrição do acompanhamento 3",
+        "finalizado": false
+      }
+    ]
+  }
+  
