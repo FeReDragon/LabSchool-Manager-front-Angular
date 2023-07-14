@@ -1,28 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from '../app/guards/auth.guard'; // Importando o authGuard
 
 const routes: Routes = [
-  {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-  },
+
+    { path: 'login', redirectTo: '/login', pathMatch: 'full' },
+
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    canActivate: [authGuard] // Adicionando o guard
   },
   {
     path: 'students',
-    loadChildren: () => import('./students/students.module').then(m => m.StudentsModule)
+    loadChildren: () => import('./students/students.module').then(m => m.StudentsModule),
+    canActivate: [authGuard] // Adicionando o guard
   },
   {
     path: 'pedagogic-support',
-    loadChildren: () => import('./pedagogic-support/pedagogic-support.module').then(m => m.PedagogicSupportModule)
+    loadChildren: () => import('./pedagogic-support/pedagogic-support.module').then(m => m.PedagogicSupportModule),
+    canActivate: [authGuard] // Adicionando o guard
   },
-  {
-    path: '',
-    redirectTo: '/auth/login',
-    pathMatch: 'full'
-  },
+ 
   // outras rotas vão aqui...
 ];
 
@@ -31,3 +30,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
