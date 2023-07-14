@@ -19,9 +19,10 @@
           </li>
         </ul>
         <span class="navbar-text mr-3" style="margin-right: 50px;">
-          Olá, Usuario X!
+          Olá, {{currentUser?.username}}!
         </span>
-        <button type="button" class="btn btn-secondary">Sair</button>
+        
+        <button type="button" class="btn btn-secondary" (click)="logout()">Logout</button>
 
       </div>
     </div>
