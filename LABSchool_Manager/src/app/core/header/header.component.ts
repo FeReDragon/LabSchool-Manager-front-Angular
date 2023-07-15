@@ -8,11 +8,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  currentUser: any;
+  currentUser: string | null = null;
   
   constructor(private authService: AuthService, private router: Router) { }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.authService.currentUser.subscribe(x => this.currentUser = x);
   }
   
   logout() {
@@ -20,3 +21,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/login']);  // supondo que sua rota de login seja '/login'
   }
 }
+
