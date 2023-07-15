@@ -2,10 +2,20 @@
 
 <div class="container mt-5">
     <h1>Listagem de Alunos</h1>
-    <input type="text" class="form-control" placeholder="Filtro pelo nome do aluno">
-    <!-- <div class="card" *ngFor="let student of students">
-        
-    </div> -->
-    <button class="btn btn-primary" routerLink="/students/create">Cadastrar novo aluno</button>
+    <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let student of students">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{student.nome}}</h5>
+            <p class="card-text">Telefone: {{student.telefone}}</p>
+            <p class="card-text">Data de Nascimento: {{student.dataNascimento}}</p>
+            <p class="card-text">CPF: {{student.cpf}}</p>
+            <p class="card-text">Nota: {{student.nota}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4" routerLink="/students/create">Cadastrar novo aluno</button>
 </div>
 
