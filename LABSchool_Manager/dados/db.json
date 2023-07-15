@@ -30,7 +30,7 @@
       "telefone": "(00) 9 6666-6666",
       "dataNascimento": "1994-03-20",
       "cpf": "444.444.444-44",
-      "nota": 7.0
+      "nota": 7
     },
     {
       "id": 5,
@@ -46,7 +46,7 @@
       "telefone": "(00) 9 4444-4444",
       "dataNascimento": "1991-11-25",
       "cpf": "666.666.666-66",
-      "nota": 8.0
+      "nota": 8
     },
     {
       "id": 7,
@@ -146,7 +146,6 @@
       "finalizado": true
     }
   ],
-  
   "users": [
     {
       "id": 1,
@@ -189,6 +188,15 @@
       "email": "rd@mail.com",
       "password": "10203040",
       "id": 5
+    },
+    {
+      "username": "",
+      "phone": "",
+      "birthdate": "2023-07-15T13:23:10.255Z",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "id": 6
     }
   ]
 }
