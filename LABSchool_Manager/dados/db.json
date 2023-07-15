@@ -23,17 +23,73 @@
       "dataNascimento": "1995-09-15",
       "cpf": "333.333.333-33",
       "nota": 9.2
+    },
+    {
+      "id": 4,
+      "nome": "Ana Oliveira",
+      "telefone": "(00) 9 6666-6666",
+      "dataNascimento": "1994-03-20",
+      "cpf": "444.444.444-44",
+      "nota": 7.0
+    },
+    {
+      "id": 5,
+      "nome": "Ricardo Ferreira",
+      "telefone": "(00) 9 5555-5555",
+      "dataNascimento": "1993-07-12",
+      "cpf": "555.555.555-55",
+      "nota": 6.5
+    },
+    {
+      "id": 6,
+      "nome": "Carla Gomes",
+      "telefone": "(00) 9 4444-4444",
+      "dataNascimento": "1991-11-25",
+      "cpf": "666.666.666-66",
+      "nota": 8.0
+    },
+    {
+      "id": 7,
+      "nome": "Lucas Costa",
+      "telefone": "(00) 9 3333-3333",
+      "dataNascimento": "1996-02-14",
+      "cpf": "777.777.777-77",
+      "nota": 9.8
+    },
+    {
+      "id": 8,
+      "nome": "Mariana Rocha",
+      "telefone": "(00) 9 2222-2222",
+      "dataNascimento": "1995-08-05",
+      "cpf": "888.888.888-88",
+      "nota": 7.2
+    },
+    {
+      "id": 9,
+      "nome": "Fernando Lima",
+      "telefone": "(00) 9 1111-1111",
+      "dataNascimento": "1993-04-17",
+      "cpf": "999.999.999-99",
+      "nota": 6.7
+    },
+    {
+      "id": 10,
+      "nome": "Camila Almeida",
+      "telefone": "(00) 9 0000-0000",
+      "dataNascimento": "1992-09-30",
+      "cpf": "000.000.000-00",
+      "nota": 8.3
     }
   ],
   "acompanhamentos": [
     {
-      "id": 1,
-      "alunoId": 1,
-      "pedagogoId": 1,
-      "data": "2023-07-10",
-      "titulo": "Acompanhamento 1",
-      "descricao": "Descrição do acompanhamento 1",
-      "finalizado": true
+      "id": 3,
+      "alunoId": 3,
+      "pedagogoId": 3,
+      "data": "2023-07-09",
+      "titulo": "Acompanhamento 3",
+      "descricao": "Descrição do acompanhamento 3",
+      "finalizado": false
     },
     {
       "id": 2,
@@ -45,15 +101,52 @@
       "finalizado": false
     },
     {
-      "id": 3,
-      "alunoId": 3,
-      "pedagogoId": 3,
-      "data": "2023-07-08",
-      "titulo": "Acompanhamento 3",
-      "descricao": "Descrição do acompanhamento 3",
+      "id": 7,
+      "alunoId": 7,
+      "pedagogoId": 7,
+      "data": "2023-07-11",
+      "titulo": "Acompanhamento 7",
+      "descricao": "Descrição do acompanhamento 7",
+      "finalizado": true
+    },
+    {
+      "id": 6,
+      "alunoId": 6,
+      "pedagogoId": 6,
+      "data": "2023-07-12",
+      "titulo": "Acompanhamento 6",
+      "descricao": "Descrição do acompanhamento 6",
       "finalizado": false
+    },
+    {
+      "id": 5,
+      "alunoId": 5,
+      "pedagogoId": 5,
+      "data": "2023-07-13",
+      "titulo": "Acompanhamento 5",
+      "descricao": "Descrição do acompanhamento 5",
+      "finalizado": false
+    },
+    {
+      "id": 1,
+      "alunoId": 1,
+      "pedagogoId": 1,
+      "data": "2023-07-10",
+      "titulo": "Acompanhamento 1",
+      "descricao": "Descrição do acompanhamento 1",
+      "finalizado": true
+    },
+    {
+      "id": 4,
+      "alunoId": 4,
+      "pedagogoId": 4,
+      "data": "2023-07-14",
+      "titulo": "Acompanhamento 4",
+      "descricao": "Descrição do acompanhamento 4",
+      "finalizado": true
     }
   ],
+  
   "users": [
     {
       "id": 1,
