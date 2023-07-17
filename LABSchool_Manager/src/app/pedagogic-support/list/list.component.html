@@ -10,8 +10,8 @@
             <h5 class="card-title">{{acompanhamento.titulo}}</h5>
             <p class="card-text">Data: {{acompanhamento.data}}</p>
             <p class="card-text">Descrição: {{acompanhamento.descricao}}</p>
-            <p class="card-text">Aluno ID: {{acompanhamento.alunoId}}</p>
-            <p class="card-text">Pedagogo ID: {{acompanhamento.pedagogoId}}</p>
+            <p class="card-text">Aluno: {{acompanhamento.alunoNome}}</p> <!-- Corrigido -->
+            <p class="card-text">Pedagogo: {{acompanhamento.usuarioNome}}</p> <!-- Corrigido -->
             <p class="card-text">Finalizado: {{acompanhamento.finalizado ? 'Sim' : 'Não'}}</p>
           </div>
         </div>
@@ -19,4 +19,5 @@
     </div>
     <button class="btn btn-primary" routerLink="/pedagogic-support/create">Cadastrar novo acompanhamento</button>
 </div>
+
 

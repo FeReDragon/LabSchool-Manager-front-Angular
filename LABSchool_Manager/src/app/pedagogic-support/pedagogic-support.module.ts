@@ -6,13 +6,15 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { CoreModule } from '../core/core.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ListComponent, CreateComponent, EditComponent],
   imports: [
     CommonModule,
     PedagogicSupportRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ]
 })
 export class PedagogicSupportModule { }
