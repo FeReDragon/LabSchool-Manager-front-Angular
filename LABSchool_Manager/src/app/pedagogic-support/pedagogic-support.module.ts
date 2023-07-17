@@ -7,6 +7,8 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { CoreModule } from '../core/core.module';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { PedagogicSupportService } from '../services/pedagogic-support.service';
 
 @NgModule({
   declarations: [ListComponent, CreateComponent, EditComponent],
@@ -14,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     PedagogicSupportRoutingModule,
     CoreModule,
-    FormsModule
-  ]
+    FormsModule,
+    RouterModule.forChild([{ path: '', component: EditComponent }])
+  ],
+  providers: [PedagogicSupportService]
 })
 export class PedagogicSupportModule { }

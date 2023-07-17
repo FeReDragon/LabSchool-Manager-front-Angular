@@ -19,7 +19,7 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const acompanhamentoId = this.route.snapshot.params['id']; // Corrigido para acessar o parâmetro 'id' usando ['id']
+    const acompanhamentoId = +this.route.snapshot.params['id'];
     this.getAcompanhamento(acompanhamentoId);
     this.getAlunos();
     this.getPedagogos();
@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
   getAcompanhamento(id: number): void {
     this.pedagogicSupportService.getAcompanhamentos().subscribe(
       (acompanhamentos: any[]) => {
-        const acompanhamento = acompanhamentos.find(item => item['id'] === id); // Corrigido para acessar a propriedade 'id' usando ['id']
+        const acompanhamento = acompanhamentos.find(item => item.id === id);
         if (acompanhamento) {
           this.acompanhamento = acompanhamento;
         } else {
@@ -64,7 +64,7 @@ export class EditComponent implements OnInit {
   }
 
   salvarAcompanhamento(): void {
-    this.pedagogicSupportService.salvarAcompanhamento(this.acompanhamento).subscribe(
+    this.pedagogicSupportService.atualizarAcompanhamento(this.acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento atualizado com sucesso');
         // Realizar qualquer ação necessária após a atualização, como redirecionar para outra página
@@ -75,6 +75,9 @@ export class EditComponent implements OnInit {
     );
   }
 }
+
+
+
 
 
 
