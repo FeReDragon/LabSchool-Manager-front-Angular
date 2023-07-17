@@ -1,16 +1,68 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
+import { map, concatMap } from 'rxjs/operators';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ListComponent } from '../pedagogic-support/list/list.component'; // Importe o componente ListComponent
+import { CreateComponent } from '../pedagogic-support/create/create.component';
+import { EditComponent } from '../pedagogic-support/edit/edit.component';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PedagogicSupportService {
-  private API_URL = 'http://localhost:3000/acompanhamentos';
+  private API_URL = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getAcompanhamentos(): Observable<any> {
-    return this.http.get(this.API_URL);
+  getAlunos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/alunos`);
+  }
+
+  getPedagogos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/users`);
+  }
+
+  getStudentName(id: number): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/alunos/${id}`).pipe(
+      map((response: any) => response?.nome)
+    );
+  }
+
+  getUserName(id: number): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/users/${id}`).pipe(
+      map((response: any) => response?.username)
+    );
+  }
+
+  getAcompanhamentos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/acompanhamentos`).pipe(
+      concatMap((acompanhamentos: any[]) => {
+        const studentRequests = acompanhamentos.map((acompanhamento: any) =>
+          this.getStudentName(acompanhamento.alunoId)
+        );
+
+        const userRequests = acompanhamentos.map((acompanhamento: any) =>
+          this.getUserName(acompanhamento.usuarioId)
+        );
+
+        return forkJoin([...studentRequests, ...userRequests]).pipe(
+          map((results: any[]) => {
+            const updatedAcompanhamentos = acompanhamentos.map((acompanhamento, index) => ({
+              ...acompanhamento,
+              alunoNome: results[index],
+              usuarioNome: results[index + acompanhamentos.length]
+            }));
+
+            return updatedAcompanhamentos;
+          })
+        );
+      })
+    );
+  }
+
+  salvarAcompanhamento(acompanhamento: any): Observable<any> {
+    return this.http.post(`${this.API_URL}/acompanhamentos`, acompanhamento);
   }
 }

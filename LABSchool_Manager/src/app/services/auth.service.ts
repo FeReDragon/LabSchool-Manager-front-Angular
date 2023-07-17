@@ -57,6 +57,11 @@ export class AuthService {
   getCurrentUserValue(): string | null {
     return this.currentUserSubject.value;
   }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get(`http://localhost:3000/users/${id}`);
+  }
+  
 }
 
 
