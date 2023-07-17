@@ -2,11 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { map, concatMap } from 'rxjs/operators';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ListComponent } from '../pedagogic-support/list/list.component'; // Importe o componente ListComponent
-import { CreateComponent } from '../pedagogic-support/create/create.component';
-import { EditComponent } from '../pedagogic-support/edit/edit.component';
 
 @Injectable({
   providedIn: 'root'
@@ -65,4 +60,10 @@ export class PedagogicSupportService {
   salvarAcompanhamento(acompanhamento: any): Observable<any> {
     return this.http.post(`${this.API_URL}/acompanhamentos`, acompanhamento);
   }
+
+  atualizarAcompanhamento(acompanhamento: any): Observable<any> {
+    const id = acompanhamento.id;
+    return this.http.put(`${this.API_URL}/acompanhamentos/${id}`, acompanhamento);
+  }
 }
+
