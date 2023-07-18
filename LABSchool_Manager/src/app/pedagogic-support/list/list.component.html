@@ -2,7 +2,8 @@
 
 <div class="container mt-5">
   <h1>Listagem de Acompanhamentos Pedagógicos</h1>
-  <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento">
+  <button class="btn btn-primary my-2" routerLink="/pedagogic-support/create">Cadastrar novo acompanhamento</button>
+  <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento" [(ngModel)]="filtroTitulo" (input)="filtrarAcompanhamentos()">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let acompanhamento of acompanhamentos$ | async; trackBy: trackByFn">
       <div class="card h-100">
@@ -19,7 +20,8 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" routerLink="/pedagogic-support/create">Cadastrar novo acompanhamento</button>
+ 
 </div>
+
 
 
