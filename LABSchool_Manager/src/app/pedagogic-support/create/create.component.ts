@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PedagogicSupportService } from '../../services/pedagogic-support.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create',
@@ -17,7 +19,8 @@ export class CreateComponent implements OnInit {
   descricaoAcompanhamento: string = '';
   finalizado: boolean = false;
 
-  constructor(private pedagogicSupportService: PedagogicSupportService) { }
+  constructor(private pedagogicSupportService: PedagogicSupportService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.getAlunos();
@@ -64,11 +67,11 @@ export class CreateComponent implements OnInit {
     this.pedagogicSupportService.salvarAcompanhamento(acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento salvo com sucesso');
-        // Realizar qualquer ação necessária após o salvamento, como redirecionar para outra página
+        this.router.navigate(['/pedagogic-support']);
       },
       (error: any) => {
         console.error('Erro ao salvar o acompanhamento', error);
       }
     );
-  }
+    }    
 }
