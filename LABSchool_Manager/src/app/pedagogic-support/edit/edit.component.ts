@@ -67,6 +67,7 @@ export class EditComponent implements OnInit {
     this.pedagogicSupportService.atualizarAcompanhamento(this.acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento atualizado com sucesso');
+        this.router.navigate(['/pedagogic-support']);
         // Realizar qualquer ação necessária após a atualização, como redirecionar para outra página
       },
       (error: any) => {
