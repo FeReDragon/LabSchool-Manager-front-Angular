@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class StudentService {
   private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getStudents(): Observable<any> {
     return this.http.get(`${this.baseUrl}/alunos`);
@@ -17,5 +17,8 @@ export class StudentService {
   getStudent(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/alunos/${id}`);
   }
-  
+
+  cadastrarAluno(aluno: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/alunos`, aluno);
+  }
 }
