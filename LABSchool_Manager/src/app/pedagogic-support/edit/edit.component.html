@@ -1,35 +1,40 @@
 <app-header></app-header>
-<h2>Editar Acompanhamento</h2>
+
 <div class="container mt-5">
-<form (ngSubmit)="salvarAcompanhamento()">
-  <div class="form-group">
-    <label for="aluno">Aluno:</label>
-    <select class="form-control" id="aluno" [(ngModel)]="acompanhamento.alunoId" name="aluno">
-      <option *ngFor="let aluno of alunos" [value]="aluno.id">{{ aluno.nome }}</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="pedagogo">Pedagogo:</label>
-    <select class="form-control" id="pedagogo" [(ngModel)]="acompanhamento.usuarioId" name="pedagogo">
-      <option *ngFor="let pedagogo of pedagogos" [value]="pedagogo.id">{{ pedagogo.username }}</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="data">Data:</label>
-    <input type="date" class="form-control" id="data" [(ngModel)]="acompanhamento.data" name="data">
-  </div>
-  <div class="form-group">
-    <label for="titulo">Título:</label>
-    <input type="text" class="form-control" id="titulo" [(ngModel)]="acompanhamento.titulo" name="titulo">
-  </div>
-  <div class="form-group">
-    <label for="descricao">Descrição:</label>
-    <textarea class="form-control" id="descricao" [(ngModel)]="acompanhamento.descricao" name="descricao"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="finalizado">Finalizado:</label>
-    <input type="checkbox" class="form-control" id="finalizado" [(ngModel)]="acompanhamento.finalizado" name="finalizado">
-  </div>
-  <button type="submit" class="btn btn-primary">Salvar</button>
-</form>
+  <h1>Editar Acompanhamento</h1>
+  <form (ngSubmit)="salvarAcompanhamento()">
+    <div class="form-group">
+      <label for="aluno">Aluno:</label>
+      <select class="form-control" id="aluno" [(ngModel)]="acompanhamento.alunoId" name="aluno">
+        <option *ngFor="let aluno of alunos" [value]="aluno.id">{{ aluno.nome }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pedagogo">Pedagogo:</label>
+      <select class="form-control" id="pedagogo" [(ngModel)]="acompanhamento.usuarioId" name="pedagogo">
+        <option *ngFor="let pedagogo of pedagogos" [value]="pedagogo.id">{{ pedagogo.username }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="data">Data:</label>
+      <input type="date" class="form-control" id="data" [(ngModel)]="acompanhamento.data" name="data">
+    </div>
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input type="text" class="form-control" id="titulo" [(ngModel)]="acompanhamento.titulo" name="titulo">
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea class="form-control" id="descricao" [(ngModel)]="acompanhamento.descricao" name="descricao"></textarea>
+    </div>
+    <div class="form-group">
+      <label>
+        Situação:
+        <input type="checkbox" [(ngModel)]="acompanhamento.finalizado" name="finalizado">
+        {{ acompanhamento.finalizado ? 'Finalizado' : 'Aberto' }}
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+     <button routerLink="/pedagogic-support" class="btn btn-secondary">Voltar para a lista de acompanhamentos pedagógicos</button>
+  </form>
 </div>
