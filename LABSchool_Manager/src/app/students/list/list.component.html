@@ -1,1 +1,21 @@
-<p>list works!</p>
+<app-header></app-header>
+
+<div class="container my-5">
+  <h1>Listagem de Alunos</h1>
+  <button class="btn btn-info my-2" routerLink="/students/create">Cadastrar novo aluno</button>
+  <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno" [(ngModel)]="filterText">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let student of students | filter: filterText">
+      <div class="card h-100 ">
+        <div class="card-body card-with-background">
+          <h5 class="card-title">{{student.nome}}</h5>
+          <p class="card-text">Telefone: {{student.telefone}}</p>
+          <p class="card-text">Data de Nascimento: {{student.dataNascimento}}</p>
+          <p class="card-text">CPF: {{student.cpf}}</p>
+          <p class="card-text">Nota: {{student.nota}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

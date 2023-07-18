@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  fullname: string;
+  username: string;
   phone: string;
   birthdate: Date;
   cpf: string;
@@ -19,7 +19,7 @@ export class RegisterComponent {
   errorMessage: string;
 
   constructor(private authService: AuthService, private router: Router) { 
-    this.fullname = '';
+    this.username = '';
     this.phone = '';
     this.birthdate = new Date();
     this.cpf = '';
@@ -37,14 +37,14 @@ export class RegisterComponent {
     }
 
     this.isLoading = true;
-    this.authService.register(this.fullname, this.phone, this.birthdate, this.cpf, this.email, this.password).subscribe(
+    this.authService.register(this.username, this.phone, this.birthdate, this.cpf, this.email, this.password).subscribe(
       success => {
         if (success) {
           this.isLoading = false;
           this.router.navigate(['/login']);
         } else {
           this.isLoading = false;
-          this.errorMessage = 'Registration failed: email already in use';
+          this.errorMessage = 'Registration failed';
         }
       },
       error => {
@@ -54,4 +54,5 @@ export class RegisterComponent {
     );
   }
 }
+
 

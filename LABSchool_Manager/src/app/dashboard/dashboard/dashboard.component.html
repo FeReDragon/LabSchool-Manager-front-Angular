@@ -1,1 +1,48 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-center p-3 card-with-background">
+        <h2 class="card-title">Alunos</h2>
+        <p class="card-text">{{ totalAlunos }}</p>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-center p-3 card-with-background">
+        <h2 class="card-title">Pedagogos</h2>
+        <p class="card-text">{{ totalPedagogos }}</p>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-center p-3 card-with-background">
+        <h2 class="card-title">Atendimentos</h2>
+        <p class="card-text">{{ totalAtendimentos }} ({{ totalAtendimentosAbertos }} abertos)</p>
+      </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-center p-3 card-with-background">
+        <h2 class="card-title">Atendimentos Concluídos</h2>
+        <p class="card-text">{{ percentualAtendimentosConcluidos }}%</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5">
+    <h2>Atendimentos por Dia</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Quantidade de Atendimentos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let atendimento of atendimentosPorDia">
+          <td>{{ atendimento.data | date:'dd/MM/yyyy' }}</td>
+          <td>{{ atendimento.quantidade }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

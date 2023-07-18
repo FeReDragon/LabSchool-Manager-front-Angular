@@ -1,1 +1,40 @@
-<p>create works!</p>
+<app-header></app-header>
+
+<div class="container mt-5">
+  <h2>Cadastro de Acompanhamento Pedagógico</h2>
+  <form (ngSubmit)="salvarAcompanhamento()" class="mt-4">
+    <div class="form-group">
+      <label for="aluno">Aluno:</label>
+      <select class="form-control" id="aluno" [(ngModel)]="selectedAluno" name="aluno">
+        <option *ngFor="let aluno of alunos" [value]="aluno.id">{{ aluno.nome }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pedagogo">Pedagogo:</label>
+      <select class="form-control" id="pedagogo" [(ngModel)]="selectedPedagogo" name="pedagogo">
+        <option *ngFor="let pedagogo of pedagogos" [value]="pedagogo.id">{{ pedagogo.username }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="dataAcompanhamento">Data:</label>
+      <input type="date" class="form-control" id="dataAcompanhamento" [value]="getCurrentDate()" [(ngModel)]="dataAcompanhamento" name="dataAcompanhamento">
+    </div>
+    <div class="form-group">
+      <label for="tituloAcompanhamento">Título do acompanhamento:</label>
+      <input type="text" class="form-control" id="tituloAcompanhamento" [(ngModel)]="tituloAcompanhamento" name="tituloAcompanhamento" placeholder="Título do acompanhamento">
+    </div>
+    <div class="form-group">
+      <label for="descricaoAcompanhamento">Descrição do acompanhamento:</label>
+      <textarea class="form-control" id="descricaoAcompanhamento" [(ngModel)]="descricaoAcompanhamento" name="descricaoAcompanhamento" placeholder="Descrição do acompanhamento"></textarea>
+    </div>
+    <div class="form-group">
+      <label>
+        Situação:
+        <input type="checkbox" [(ngModel)]="finalizado" name="finalizado">
+        {{ finalizado ? 'Finalizado' : 'Aberto' }}
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button routerLink="/pedagogic-support" class="btn btn-secondary">Voltar para a lista de acompanhamentos pedagógicos</button>
+  </form>
+</div>

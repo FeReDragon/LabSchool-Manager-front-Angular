@@ -1,39 +1,67 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  // A lista de usuários. Na realidade, você faria uma chamada HTTP ao seu backend aqui.
-  private users = [
-    { email: 'test@example.com', password: 'password' }
-  ];
+  private currentUserSubject: BehaviorSubject<string | null>;
+  public currentUser: Observable<string | null>;
 
-  constructor() { }
-
-  login(email: string, password: string): Observable<boolean> {
-    return of(this.users).pipe(
-      delay(1000), // Simula uma chamada HTTP
-      map(users => users.some(user => email === user.email && password === user.password))
-    );
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<string | null>(this.getLocalUser());
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  register(fullname: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
-    return of(this.users).pipe(
-      delay(1000), // Simula uma chamada HTTP
-      map(users => {
-        if (users.some(user => email === user.email)) {
-          // Se o e-mail já estiver registrado, retorna false
-          return false;
+  private getLocalUser(): string | null {
+    const user = localStorage.getItem('currentUser');
+    return user ? JSON.parse(user)[0].username : null; 
+  }
+
+  login(username: string, password: string): Observable<boolean> {
+    return this.http.get<any>(`http://localhost:3000/users?username=${username}&password=${password}`)
+      .pipe(map(user => {
+        if (user && user.length) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user[0].username);
+          return true;
         }
-        // Se não, registra o novo usuário e retorna true
-        this.users.push({ email, password });
-        return true;
-      })
-    );
+        return false;
+      }));
   }
+
+  register(username: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
+    const user = { username, phone, birthdate, cpf, email, password };
+    return this.http.post<any>(`http://localhost:3000/users`, user)
+      .pipe(map(response => {
+        if (response) {
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          this.currentUserSubject.next(response.username);
+          return true;
+        }
+        return false;
+      }));
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('currentUser');
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+  }
+
+  getCurrentUserValue(): string | null {
+    return this.currentUserSubject.value;
+  }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get(`http://localhost:3000/users/${id}`);
+  }
+  
 }
 
 

@@ -1,1 +1,27 @@
-<p>list works!</p>
+<app-header></app-header>
+
+<div class="container my-5">
+  <h1>Listagem de Acompanhamentos Pedagógicos</h1>
+  <button class="btn btn-info my-2" routerLink="/pedagogic-support/create">Cadastrar novo acompanhamento</button>
+  <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento" [(ngModel)]="filtroTitulo" (input)="filtrarAcompanhamentos()">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let acompanhamento of acompanhamentos$ | async; trackBy: trackByFn">
+      <div class="card h-100">
+        <div class="card-body card-with-background">
+          <h5 class="card-title">{{acompanhamento.titulo}}</h5>
+          <p class="card-text">Data: {{acompanhamento.data}}</p>
+          <p class="card-text">Descrição: {{acompanhamento.descricao}}</p>
+          <p class="card-text">Aluno: {{acompanhamento.alunoNome}}</p>
+          <p class="card-text">Pedagogo: {{acompanhamento.usuarioNome}}</p>
+          <p class="card-text">Finalizado: {{acompanhamento.finalizado ? 'Sim' : 'Não'}}</p>
+          
+          <button class="btn btn-secondary" [routerLink]="['/pedagogic-support/edit', acompanhamento.id]">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+
+

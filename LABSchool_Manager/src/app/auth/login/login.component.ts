@@ -18,9 +18,14 @@ export class LoginComponent {
   login(): void {
     this.isLoading = true;
     this.authService.login(this.email, this.password).subscribe(
-      () => {
-        this.isLoading = false;
-        this.router.navigate(['/']);
+      success => {
+        if (success) {
+          this.isLoading = false;
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.isLoading = false;
+          this.errorMessage = 'Invalid email or password';
+        }
       },
       error => {
         this.isLoading = false;
