@@ -8,16 +8,20 @@ import { CoreModule } from '../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { CoreRoutingModule } from '../core/core-routing.module';
 import { HeaderComponent } from '../core/header/header.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
-  declarations: [ListComponent, CreateComponent,
+  declarations: [
+    ListComponent,
+    CreateComponent,
+    FilterPipe // Adicione o FilterPipe nas declarações
   ],
   imports: [
     CommonModule,
     StudentsRoutingModule,
     CoreModule,
     FormsModule,
+    CoreRoutingModule
   ]
 })
 export class StudentsModule { }
-

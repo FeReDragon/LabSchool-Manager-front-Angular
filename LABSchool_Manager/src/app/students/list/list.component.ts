@@ -8,6 +8,7 @@ import { StudentService } from '../../services/students.service';
 })
 export class ListComponent implements OnInit {
   students: any;
+  filterText: string = '';
 
   constructor(private studentService: StudentService) { }
 
@@ -21,3 +22,4 @@ export class ListComponent implements OnInit {
     });
   }
 }
+
