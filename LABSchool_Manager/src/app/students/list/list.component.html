@@ -2,6 +2,7 @@
 
 <div class="container mt-5">
     <h1>Listagem de Alunos</h1>
+    <button class="btn btn-primary my-2" routerLink="/students/create">Cadastrar novo aluno</button>
     <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col" *ngFor="let student of students">
@@ -16,6 +17,6 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary mt-4" routerLink="/students/create">Cadastrar novo aluno</button>
+    
 </div>
 
