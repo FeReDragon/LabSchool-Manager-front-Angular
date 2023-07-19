@@ -79,71 +79,190 @@
       "dataNascimento": "1992-09-30",
       "cpf": "000.000.000-00",
       "nota": 8.3
+    },
+    {
+      "nome": "Rafaella Migotto Aurélio",
+      "telefone": "48991536365",
+      "dataNascimento": "2015-10-22",
+      "cpf": "0000000012",
+      "nota": 10,
+      "id": 11
+    },
+    {
+      "nome": "Antonio Luis Migotto",
+      "telefone": "62991478563",
+      "dataNascimento": "1955-01-15",
+      "cpf": "12345678912",
+      "nota": 8.4,
+      "id": 12
+    },
+    {
+      "nome": "fernanda migotto",
+      "telefone": "55-99852145",
+      "dataNascimento": "1982-08-03",
+      "cpf": "0000000012",
+      "nota": 9,
+      "id": 13
+    },
+    {
+      "nome": "kaua Aurelio",
+      "telefone": "48991715000",
+      "dataNascimento": "2020-10-10",
+      "cpf": "0000000013",
+      "nota": 8.5,
+      "id": 14
+    },
+    {
+      "nome": "Rosangela Montanari",
+      "telefone": "48991715300",
+      "dataNascimento": "1960-09-22",
+      "cpf": "0000000015",
+      "nota": 8,
+      "id": 15
     }
   ],
   "acompanhamentos": [
     {
-      "id": 3,
+      "id": 1,
       "alunoId": 3,
-      "pedagogoId": 3,
-      "data": "2023-07-09",
-      "titulo": "Acompanhamento 3",
-      "descricao": "Descrição do acompanhamento 3",
-      "finalizado": false
+      "usuarioId": 1,
+      "data": "2023-07-11",
+      "titulo": "Acompanhamento 1",
+      "descricao": "atualizando acopanhamento 1 v2",
+      "finalizado": true,
+      "alunoNome": "Pedro Santos",
+      "usuarioNome": "Ana Oliveira"
     },
     {
       "id": 2,
-      "alunoId": 2,
-      "pedagogoId": 2,
-      "data": "2023-07-09",
+      "alunoId": 4,
+      "usuarioId": 2,
+      "data": "2023-07-11",
       "titulo": "Acompanhamento 2",
       "descricao": "Descrição do acompanhamento 2",
-      "finalizado": false
+      "finalizado": false,
+      "alunoNome": "Ana Oliveira",
+      "usuarioNome": "Carlos Ferreira"
     },
     {
-      "id": 7,
-      "alunoId": 7,
-      "pedagogoId": 7,
+      "id": 3,
+      "alunoId": 2,
+      "usuarioId": 3,
       "data": "2023-07-11",
-      "titulo": "Acompanhamento 7",
-      "descricao": "Descrição do acompanhamento 7",
-      "finalizado": true
+      "titulo": "Acompanhamento 3",
+      "descricao": "teste do acompanhamento 3 ",
+      "finalizado": false,
+      "alunoNome": "Maria Souza",
+      "usuarioNome": "Mariana Rodrigues"
     },
     {
-      "id": 6,
-      "alunoId": 6,
-      "pedagogoId": 6,
+      "id": 4,
+      "alunoId": 1,
+      "usuarioId": 4,
       "data": "2023-07-12",
-      "titulo": "Acompanhamento 6",
-      "descricao": "Descrição do acompanhamento 6",
-      "finalizado": false
+      "titulo": "Acompanhamento 4",
+      "descricao": "Descrição do acompanhamento 4",
+      "finalizado": true
     },
     {
       "id": 5,
       "alunoId": 5,
-      "pedagogoId": 5,
+      "usuarioId": 5,
       "data": "2023-07-13",
       "titulo": "Acompanhamento 5",
-      "descricao": "Descrição do acompanhamento 5",
+      "descricao": "testando descriccao item 5 ",
+      "finalizado": false,
+      "alunoNome": "Ricardo Ferreira",
+      "usuarioNome": "RedDragon"
+    },
+    {
+      "id": 6,
+      "alunoId": 6,
+      "usuarioId": 1,
+      "data": "2023-07-14",
+      "titulo": "Acompanhamento 6 editado",
+      "descricao": "Descrição do acompanhamento 6",
+      "finalizado": true,
+      "alunoNome": "Carla Gomes",
+      "usuarioNome": "Ana Oliveira"
+    },
+    {
+      "id": 7,
+      "alunoId": 7,
+      "usuarioId": 2,
+      "data": "2023-07-15",
+      "titulo": "Acompanhamento 7",
+      "descricao": "Descrição do acompanhamento 7",
       "finalizado": false
     },
     {
-      "id": 1,
-      "alunoId": 1,
-      "pedagogoId": 1,
-      "data": "2023-07-10",
-      "titulo": "Acompanhamento 1",
-      "descricao": "Descrição do acompanhamento 1",
+      "id": 8,
+      "alunoId": 8,
+      "usuarioId": 3,
+      "data": "2023-07-16",
+      "titulo": "Acompanhamento 8",
+      "descricao": "Descrição do acompanhamento 8",
       "finalizado": true
     },
     {
-      "id": 4,
-      "alunoId": 4,
-      "pedagogoId": 4,
-      "data": "2023-07-14",
-      "titulo": "Acompanhamento 4",
-      "descricao": "Descrição do acompanhamento 4",
-      "finalizado": true
+      "id": 9,
+      "alunoId": 9,
+      "usuarioId": 4,
+      "data": "2023-07-17",
+      "titulo": "Acompanhamento 9",
+      "descricao": "Descrição do acompanhamento 9",
+      "finalizado": false
+    },
+    {
+      "id": 10,
+      "alunoId": 10,
+      "usuarioId": 5,
+      "data": "2023-07-18",
+      "titulo": "editado Acompanhamento 10",
+      "descricao": "teste confirmado Descrição do acompanhamento 10",
+      "finalizado": false,
+      "alunoNome": "Camila Almeida",
+      "usuarioNome": "RedDragon"
+    },
+    {
+      "alunoId": "2",
+      "usuarioId": "4",
+      "data": "2023-07-18",
+      "titulo": "acompanhanto Maria x fernandpo",
+      "descricao": "abertura de acompanhamento pedagogico",
+      "finalizado": false,
+      "id": 11
+    },
+    {
+      "alunoId": "13",
+      "usuarioId": "3",
+      "data": "2023-07-18",
+      "titulo": "test",
+      "descricao": "test",
+      "finalizado": true,
+      "id": 12,
+      "alunoNome": "fernanda migotto",
+      "usuarioNome": "Mariana Rodrigues"
+    },
+    {
+      "alunoId": "1",
+      "usuarioId": "6",
+      "data": "2023-07-19",
+      "titulo": "Acompanhanto de diciplina",
+      "descricao": "acompanhamento pedagogico relaciona a diciplina de matematica acompanhamento pedagogico relaciona a diciplina de matematica acompanhamento pedagogico relaciona a diciplina de matematica ",
+      "finalizado": true,
+      "id": 13,
+      "alunoNome": "João Silva",
+      "usuarioNome": "Pedro malazarts"
+    },
+    {
+      "alunoId": "1",
+      "usuarioId": "4",
+      "data": "2023-07-19",
+      "titulo": "reforço joao x fernando",
+      "descricao": "acompanhamento para fins de desenvolvimento",
+      "finalizado": false,
+      "id": 14
     }
   ],
   "users": [
@@ -190,12 +309,12 @@
       "id": 5
     },
     {
-      "username": "",
-      "phone": "",
-      "birthdate": "2023-07-15T13:23:10.255Z",
-      "cpf": "",
-      "email": "",
-      "password": "",
+      "username": "Pedro malazarts",
+      "phone": "48991632033",
+      "birthdate": "1984-01-26",
+      "cpf": "000000000",
+      "email": "testmail@mail.com",
+      "password": "10203040",
       "id": 6
     }
   ]
