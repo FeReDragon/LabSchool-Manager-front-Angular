@@ -17,8 +17,9 @@ export class AuthService {
 
   private getLocalUser(): string | null {
     const user = localStorage.getItem('currentUser');
-    return user ? JSON.parse(user)[0].username : null; 
+    return user ? JSON.parse(user).username : null; 
   }
+  
 
   login(emailOrUsername: string, password: string): Observable<boolean> {
     const emailLogin$ = this.http.get<any>(`http://localhost:3000/users?email=${emailOrUsername}&password=${password}`)
