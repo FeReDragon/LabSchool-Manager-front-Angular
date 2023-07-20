@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent {
   email: string = '';
+  username: string = '';
   password: string = '';
   isLoading: boolean = false;
   errorMessage: string = '';
@@ -17,19 +18,20 @@ export class LoginComponent {
 
   login(): void {
     this.isLoading = true;
-    this.authService.login(this.email, this.password).subscribe(
+    const emailOrUsername = this.email.includes('@') ? this.email : this.username;
+    this.authService.login(emailOrUsername, this.password).subscribe(
       success => {
         if (success) {
           this.isLoading = false;
           this.router.navigate(['/dashboard']);
         } else {
           this.isLoading = false;
-          this.errorMessage = 'Invalid email or password';
+          this.errorMessage = 'E-mail or username and password combination is invalid';
         }
       },
       error => {
         this.isLoading = false;
-        this.errorMessage = 'Invalid email or password';
+        this.errorMessage = 'E-mail or username and password combination is invalid';
       }
     );
   }

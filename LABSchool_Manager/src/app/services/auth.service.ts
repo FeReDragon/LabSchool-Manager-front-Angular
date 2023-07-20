@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -20,16 +20,32 @@ export class AuthService {
     return user ? JSON.parse(user)[0].username : null; 
   }
 
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.get<any>(`http://localhost:3000/users?username=${username}&password=${password}`)
-      .pipe(map(user => {
-        if (user && user.length) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user[0].username);
-          return true;
-        }
-        return false;
-      }));
+  login(emailOrUsername: string, password: string): Observable<boolean> {
+    const emailLogin$ = this.http.get<any>(`http://localhost:3000/users?email=${emailOrUsername}&password=${password}`)
+      .pipe(
+        map(user => {
+          if (user && user.length) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user[0].username);
+            return true;
+          }
+          return false;
+        })
+      );
+
+    const usernameLogin$ = this.http.get<any>(`http://localhost:3000/users?username=${emailOrUsername}&password=${password}`)
+      .pipe(
+        map(user => {
+          if (user && user.length) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user[0].username);
+            return true;
+          }
+          return false;
+        })
+      );
+
+    return merge(emailLogin$, usernameLogin$);
   }
 
   register(username: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
@@ -61,7 +77,6 @@ export class AuthService {
   getUser(id: number): Observable<any> {
     return this.http.get(`http://localhost:3000/users/${id}`);
   }
-  
 }
 
 
