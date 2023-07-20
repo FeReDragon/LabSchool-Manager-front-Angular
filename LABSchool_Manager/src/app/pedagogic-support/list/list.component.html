@@ -4,17 +4,17 @@
   <h1>Listagem de Acompanhamentos Pedagógicos</h1>
   <button class="btn btn-info my-2" routerLink="/pedagogic-support/create"> <i class="fas fa-plus"></i> Cadastrar novo acompanhamento</button>
   <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento" [(ngModel)]="filtroTitulo" (input)="filtrarAcompanhamentos()">
-  <div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let acompanhamento of acompanhamentos$ | async; trackBy: trackByFn">
       <div class="card h-100">
+        <i class="fas fa-comments fa-5x d-flex  mb-3 justify-content-center align-items-center my-4"></i>
         <div class="card-body card-with-background">
-          <i class="fas fa-comments fa-5x d-flex  mb-3 justify-content-center align-items-center"></i>
           <h5 class="card-title">{{acompanhamento.titulo}}</h5>
-          <p class="card-text">Data: {{acompanhamento.data}}</p>
-          <p class="card-text">Descrição: {{acompanhamento.descricao}}</p>
-          <p class="card-text">Aluno: {{acompanhamento.alunoNome}}</p>
-          <p class="card-text">Pedagogo: {{acompanhamento.usuarioNome}}</p>
-          <p class="card-text">Finalizado: {{acompanhamento.finalizado ? 'Sim' : 'Não'}}</p>
+          <p class="card-text"><i class="fas fa-calendar"></i>  {{acompanhamento.data}}</p>
+          <p class="card-text"><i class="fas fa-file-alt"></i>  {{acompanhamento.descricao}}</p>
+          <p class="card-text"> <i class="fas fa-user-graduate"></i>  {{acompanhamento.alunoNome}}</p>
+          <p class="card-text"><i class="fas fa-chalkboard-teacher"></i>  {{acompanhamento.usuarioNome}}</p>
+          <p class="card-text"> <i class="fas fa-info-circle"></i> Situaçao: {{acompanhamento.finalizado ? 'Concluido' : 'Aberto'}}</p>
           
           <button class="btn btn-secondary" [routerLink]="['/pedagogic-support/edit', acompanhamento.id]"><i class="fas fa-pencil-alt"></i>
              Editar</button>

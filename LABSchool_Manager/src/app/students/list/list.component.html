@@ -10,11 +10,11 @@
       <div class="card h-100">
         <i class="fas fa-user-graduate fa-5x d-flex justify-content-center align-items-center my-4"></i>
         <div class="card-body card-with-background">
-          <h5 class="card-title">{{ student.nome }}</h5>
-          <p class="card-text">Telefone: {{ student.telefone }}</p>
-          <p class="card-text">Data de Nascimento: {{ student.dataNascimento }}</p>
-          <p class="card-text">CPF: {{ student.cpf }}</p>
-          <p class="card-text">Nota: {{ student.nota }}</p>
+          <h4 class="card-title d-flex justify-content-center align-items-center">{{ student.nome }}</h4>
+          <p class="card-text"><i class="fas fa-phone"></i>  {{ student.telefone }}</p>
+          <p class="card-text"><i class="fas fa-calendar-alt"></i> {{ student.dataNascimento }}</p>
+          <p class="card-text"><i class="fas fa-id-card"></i> {{ student.cpf }}</p>
+          <p class="card-text"><i class="fas fa-star"></i> Nota: {{ student.nota }}</p>
         </div>
       </div>
     </div>
