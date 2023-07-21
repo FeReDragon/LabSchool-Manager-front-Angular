@@ -4,47 +4,87 @@
       <div class="container">
         <img src="../../../assets//img/labScool-logo.png" alt="Logo" style="width: 200px; height: 200px; object-fit: cover; display: block; margin-left: auto; margin-right: auto;">
         <h2 class="text-center">Formulário de Cadastro</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label for="username" class="form-label">Nome Completo</label>
-              <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+        <form [formGroup]="registerForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="username" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="username" formControlName="username"
+                  [class.is-invalid]="registerForm.controls['username'].invalid && registerForm.controls['username'].touched"
+                  [class.is-valid]="!registerForm.controls['username'].invalid && registerForm.controls['username'].touched">
+                <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="invalid-feedback">
+                  O nome completo é obrigatório.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="phone" formControlName="phone"
+                  [class.is-invalid]="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched"
+                  [class.is-valid]="!registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched">
+                <div *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched" class="invalid-feedback">
+                  O telefone é obrigatório ex (00)00000-0000.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="birthdate" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="birthdate" formControlName="birthdate"
+                  [class.is-invalid]="registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched"
+                  [class.is-valid]="!registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched">
+                <div *ngIf="registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched" class="invalid-feedback">
+                  A data de nascimento é obrigatória.
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="phone" class="form-label">Telefone</label>
-              <input type="text" class="form-control" id="phone" [(ngModel)]="phone" name="phone" maxlength="16" required>
-            </div>
-            <div class="mb-3">
-              <label for="birthdate" class="form-label">Data de Nascimento</label>
-              <input type="date" class="form-control" id="birthdate" [(ngModel)]="birthdate" name="birthdate" required>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" formControlName="cpf"
+                  [class.is-invalid]="registerForm.controls['cpf'].invalid && registerForm.controls['cpf'].touched"
+                  [class.is-valid]="!registerForm.controls['cpf'].invalid && registerForm.controls['cpf'].touched">
+                <div *ngIf="registerForm.controls['cpf'].invalid && registerForm.controls['cpf'].touched" class="invalid-feedback">
+                  O CPF é obrigatório e deve estar no formato 000.000.000-00.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                  [class.is-invalid]="registerForm.controls['email'].invalid && registerForm.controls['email'].touched"
+                  [class.is-valid]="!registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+                <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="invalid-feedback">
+                  O email é obrigatório e deve ser um email válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password" formControlName="password"
+                  [class.is-invalid]="registerForm.controls['password'].invalid && registerForm.controls['password'].touched"
+                  [class.is-valid]="!registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+                <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="invalid-feedback">
+                  A senha é obrigatória e deve conter no mínimo 8 caracteres.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirme a Senha</label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                  [class.is-invalid]="registerForm.controls['confirmPassword'].invalid && registerForm.controls['confirmPassword'].touched"
+                  [class.is-valid]="!registerForm.controls['confirmPassword'].invalid && registerForm.controls['confirmPassword'].touched">
+                <div *ngIf="registerForm.controls['confirmPassword'].invalid && registerForm.controls['confirmPassword'].touched" class="invalid-feedback">
+                  A confirmação de senha é obrigatória e deve conter no mínimo 8 caracteres.
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label for="cpf" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="cpf" [(ngModel)]="cpf" name="cpf" maxlength="14" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" minlength="8" required>
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirme a Senha</label>
-              <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" minlength="8" required>
-            </div>
+          <div class="mb-3" *ngIf="errorMessage">
+            <div class="alert alert-danger">{{ errorMessage }}</div>
           </div>
-        </div>
-        <div class="mb-3" *ngIf="errorMessage">
-          <div class="alert alert-danger">{{ errorMessage }}</div>
-        </div>
-        <button (click)="register()" type="submit" class="btn btn-info" [disabled]="isLoading">Cadastrar</button>
+          <button (click)="register()" type="submit" class="btn btn-info" [disabled]="isLoading">Cadastrar</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
   
