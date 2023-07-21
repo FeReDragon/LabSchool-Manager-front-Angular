@@ -26,7 +26,8 @@ import { PedagogicSupportModule } from './pedagogic-support/pedagogic-support.mo
     DashboardModule,
     StudentsModule,
     PedagogicSupportModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

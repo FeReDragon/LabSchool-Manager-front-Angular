@@ -21,15 +21,22 @@ export class PedagogicSupportService {
 
   getStudentName(id: number): Observable<any> {
     return this.http.get<any>(`${this.API_URL}/alunos/${id}`).pipe(
-      map((response: any) => response?.nome)
+      map((response: any) => {
+        console.log('Student Response:', response);
+        return response?.nome;
+      })
     );
   }
-
+  
   getUserName(id: number): Observable<any> {
     return this.http.get<any>(`${this.API_URL}/users/${id}`).pipe(
-      map((response: any) => response?.username)
+      map((response: any) => {
+        console.log('User Response:', response);
+        return response?.username;
+      })
     );
   }
+  
 
   getAcompanhamentos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.API_URL}/acompanhamentos`).pipe(

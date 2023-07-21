@@ -1,11 +1,10 @@
 <app-header></app-header>
-
 <div class="container my-5">
   <h1>Listagem de Acompanhamentos Pedagógicos</h1>
   <button class="btn btn-info my-2" routerLink="/pedagogic-support/create"> <i class="fas fa-plus"></i> Cadastrar novo acompanhamento</button>
   <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento" [(ngModel)]="filtroTitulo" (input)="filtrarAcompanhamentos()">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let acompanhamento of acompanhamentos$ | async; trackBy: trackByFn">
+    <div class="col" *ngFor="let acompanhamento of paginatedAcompanhamentos; trackBy: trackByFn">
       <div class="card h-100">
         <i class="fas fa-comments fa-5x d-flex  mb-3 justify-content-center align-items-center my-4"></i>
         <div class="card-body card-with-background">
@@ -15,15 +14,23 @@
           <p class="card-text"> <i class="fas fa-user-graduate"></i>  {{acompanhamento.alunoNome}}</p>
           <p class="card-text"><i class="fas fa-chalkboard-teacher"></i>  {{acompanhamento.usuarioNome}}</p>
           <p class="card-text"> <i class="fas fa-info-circle"></i> Situaçao: {{acompanhamento.finalizado ? 'Concluido' : 'Aberto'}}</p>
-          
-          <button class="btn btn-secondary" [routerLink]="['/pedagogic-support/edit', acompanhamento.id]"><i class="fas fa-pencil-alt"></i>
-             Editar</button>
+          <button class="btn btn-secondary" [routerLink]="['/pedagogic-support/edit', acompanhamento.id]"><i class="fas fa-pencil-alt"></i> Editar</button>
         </div>
       </div>
     </div>
   </div>
- 
+  <nav aria-label="Page navigation" class="d-flex justify-content-center my-3">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" href="#" (click)="changePage(currentPage-1); $event.preventDefault()">Previous</a>
+      </li>
+      <li class="page-item" [class.active]="currentPage === i+1" *ngFor="let i of totalPages">
+        <a class="page-link" href="#" (click)="changePage(i+1); $event.preventDefault()">{{ i+1 }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+        <a class="page-link" href="#" (click)="changePage(currentPage+1); $event.preventDefault()">Next</a>
+      </li>
+    </ul>
+  </nav>
 </div>
-
-
 
