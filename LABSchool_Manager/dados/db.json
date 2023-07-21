@@ -119,6 +119,94 @@
       "cpf": "0000000015",
       "nota": 8,
       "id": 15
+    },
+    {
+      "nome": "Andre Dalessandro",
+      "telefone": "55991742562",
+      "dataNascimento": "1988-01-20",
+      "cpf": "11122233312",
+      "nota": 10,
+      "id": 16
+    },
+    {
+      "nome": "João Silva",
+      "telefone": "55991234567",
+      "dataNascimento": "1990-06-20",
+      "cpf": "11122233313",
+      "nota": 8,
+      "id": 17
+    },
+    {
+      "nome": "Maria Fernandes",
+      "telefone": "55997654321",
+      "dataNascimento": "1995-04-10",
+      "cpf": "11122233314",
+      "nota": 9,
+      "id": 18
+    },
+    {
+      "nome": "Carlos Alberto",
+      "telefone": "55991239876",
+      "dataNascimento": "1987-11-30",
+      "cpf": "11122233315",
+      "nota": 10,
+      "id": 19
+    },
+    {
+      "nome": "Beatriz Santos",
+      "telefone": "55998765432",
+      "dataNascimento": "1992-02-14",
+      "cpf": "11122233316",
+      "nota": 7,
+      "id": 20
+    },
+    {
+      "nome": "Gabriela Souza",
+      "telefone": "55991234987",
+      "dataNascimento": "1998-08-23",
+      "cpf": "11122233317",
+      "nota": 6,
+      "id": 21
+    },
+    {
+      "nome": "Antônio Costa",
+      "telefone": "55999876543",
+      "dataNascimento": "1989-05-15",
+      "cpf": "11122233318",
+      "nota": 8,
+      "id": 22
+    },
+    {
+      "nome": "Isabela Oliveira",
+      "telefone": "55991234598",
+      "dataNascimento": "1994-07-27",
+      "cpf": "11122233319",
+      "nota": 10,
+      "id": 23
+    },
+    {
+      "nome": "Renato Lima",
+      "telefone": "55998765439",
+      "dataNascimento": "1991-03-06",
+      "cpf": "11122233320",
+      "nota": 7,
+      "id": 24
+    },
+    {
+      "nome": "Juliana Martins",
+      "telefone": "55991234569",
+      "dataNascimento": "1993-12-01",
+      "cpf": "11122233321",
+      "nota": 9,
+      "id": 25
+    },
+    {
+      "nome": "Marcos Vinicius",
+      "telefone": "55998765430",
+      "dataNascimento": "1997-09-19",
+      "cpf": "11122233322",
+      "nota": 8,
+      "id": 26
     }
   ],
   "acompanhamentos": [
@@ -140,7 +228,7 @@
       "data": "2023-07-11",
       "titulo": "Acompanhamento 2",
       "descricao": "Descrição do acompanhamento 2",
-      "finalizado": false,
+      "finalizado": true,
       "alunoNome": "Ana Oliveira",
       "usuarioNome": "Carlos Ferreira"
     },
@@ -250,7 +338,7 @@
       "data": "2023-07-19",
       "titulo": "Acompanhanto de diciplina",
       "descricao": "acompanhamento pedagogico relaciona a diciplina de matematica acompanhamento pedagogico relaciona a diciplina de matematica acompanhamento pedagogico relaciona a diciplina de matematica ",
-      "finalizado": true,
+      "finalizado": false,
       "id": 13,
       "alunoNome": "João Silva",
       "usuarioNome": "Pedro malazarts"
@@ -263,6 +351,15 @@
       "descricao": "acompanhamento para fins de desenvolvimento",
       "finalizado": false,
       "id": 14
+    },
+    {
+      "alunoId": "16",
+      "usuarioId": "4",
+      "data": "2023-07-20",
+      "titulo": "acompanhamento andre com pedagogo fernando",
+      "descricao": "acompanhamento para revisao de conteudo",
+      "finalizado": false,
+      "id": 15
     }
   ],
   "users": [
@@ -316,6 +413,24 @@
       "email": "testmail@mail.com",
       "password": "10203040",
       "id": 6
+    },
+    {
+      "username": "Zeli terinha",
+      "phone": "(48) 9 1234-1236",
+      "birthdate": "1966-07-08",
+      "cpf": "111.000.000-00",
+      "email": "maol@mail.com",
+      "password": "10203040",
+      "id": 7
+    },
+    {
+      "username": "Ronaldo Nazario",
+      "phone": "(48)99171-5395",
+      "birthdate": "2002-02-26",
+      "cpf": "111.000.000-00",
+      "email": "mail33@mail.com",
+      "password": "10203040",
+      "id": 8
     }
   ]
 }
