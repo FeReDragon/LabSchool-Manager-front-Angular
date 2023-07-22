@@ -5,7 +5,7 @@ import { StudentsRoutingModule } from './students-routing.module';
 import { ListComponent } from '../students/list/list.component';
 import { CreateComponent } from './create/create.component';
 import { CoreModule } from '../core/core.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreRoutingModule } from '../core/core-routing.module';
 import { HeaderComponent } from '../core/header/header.component';
 import { FilterPipe } from './filter.pipe';
@@ -21,7 +21,8 @@ import { FilterPipe } from './filter.pipe';
     StudentsRoutingModule,
     CoreModule,
     FormsModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class StudentsModule { }
