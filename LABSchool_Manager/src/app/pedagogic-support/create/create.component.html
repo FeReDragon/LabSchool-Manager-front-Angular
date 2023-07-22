@@ -7,20 +7,22 @@
       <label for="aluno">Aluno:</label>
       <select class="form-control" id="aluno" formControlName="aluno"
         [class.is-invalid]="isFieldInvalid('aluno')" [class.is-valid]="isFieldValid('aluno')">
+        <option value="" disabled selected>Selecione um aluno</option>
         <option *ngFor="let aluno of alunos" [value]="aluno.id">{{ aluno.nome }}</option>
       </select>
       <div *ngIf="isFieldInvalid('aluno')" class="invalid-feedback">
-        Selecione um aluno.
+        Selecione um aluno
       </div>
     </div>
     <div class="form-group">
       <label for="pedagogo">Pedagogo:</label>
       <select class="form-control" id="pedagogo" formControlName="pedagogo"
         [class.is-invalid]="isFieldInvalid('pedagogo')" [class.is-valid]="isFieldValid('pedagogo')">
+        <option value="" disabled selected>Selecione um pedagogo</option>
         <option *ngFor="let pedagogo of pedagogos" [value]="pedagogo.id">{{ pedagogo.username }}</option>
       </select>
       <div *ngIf="isFieldInvalid('pedagogo')" class="invalid-feedback">
-        Selecione um pedagogo.
+        Selecione um pedagogo
       </div>
     </div>
     <div class="form-group">

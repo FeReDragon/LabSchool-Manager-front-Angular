@@ -10,18 +10,19 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   acompanhamentoForm: FormGroup;
-  alunos: any[] = [];
-  pedagogos: any[] = [];
+  alunos: any[] = [{ id: '', nome: 'Selecione um aluno' }]; // Adicionando a opção "Selecione um aluno."
+  pedagogos: any[] = [{ id: '', username: 'Selecione um pedagogo' }]; // Adicionando a opção "Selecione um pedagogo."
 
   constructor(private formBuilder: FormBuilder, private pedagogicSupportService: PedagogicSupportService, private router: Router) {
     this.acompanhamentoForm = this.formBuilder.group({
-      aluno: [null, Validators.required],
-      pedagogo: [null, Validators.required],
+      aluno: ['', Validators.required],
+      pedagogo: ['', Validators.required],
       dataAcompanhamento: [this.getCurrentDate(), Validators.required],
       tituloAcompanhamento: ['', Validators.required],
       descricaoAcompanhamento: ['', Validators.required],
       finalizado: [false]
     });
+
   }
 
   ngOnInit(): void {
