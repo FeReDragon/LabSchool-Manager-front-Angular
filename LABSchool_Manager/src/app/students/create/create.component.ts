@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StudentService } from '../../services/students.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
   alunoForm: FormGroup;
   isLoading: boolean;
   errorMessage: string;
@@ -24,6 +24,9 @@ export class CreateComponent {
 
     this.isLoading = false;
     this.errorMessage = '';
+  }
+
+  ngOnInit(): void {
   }
 
   salvarAluno() {
@@ -46,6 +49,14 @@ export class CreateComponent {
       }
     );
   }
+
+  isFieldInvalid(field: string): boolean {
+    const formControl = this.alunoForm.get(field);
+    return (formControl?.invalid && (formControl?.dirty || formControl?.touched)) ?? false;
+  }
+
+  isFieldValid(field: string): boolean {
+    const formControl = this.alunoForm.get(field);
+    return (formControl?.valid && (formControl?.dirty || formControl?.touched)) ?? false;
+  }
 }
-
-

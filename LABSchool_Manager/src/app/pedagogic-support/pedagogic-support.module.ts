@@ -6,7 +6,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { CoreModule } from '../core/core.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PedagogicSupportService } from '../services/pedagogic-support.service';
 
@@ -17,6 +17,7 @@ import { PedagogicSupportService } from '../services/pedagogic-support.service';
     PedagogicSupportRoutingModule,
     CoreModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([{ path: '', component: EditComponent }])
   ],
   providers: [PedagogicSupportService]
