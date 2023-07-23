@@ -21,15 +21,21 @@
   </div>
   <nav aria-label="Page navigation" class="d-flex justify-content-center my-3">
     <ul class="pagination">
-      <li class="page-item" [class.disabled]="currentPage === 1">
-        <a class="page-link" href="#" (click)="changePage(currentPage-1); $event.preventDefault()">Previous</a>
-      </li>
-      <li class="page-item" [class.active]="currentPage === i+1" *ngFor="let i of totalPages">
-        <a class="page-link" href="#" (click)="changePage(i+1); $event.preventDefault()">{{ i+1 }}</a>
-      </li>
-      <li class="page-item" [class.disabled]="currentPage === totalPages.length">
-        <a class="page-link" href="#" (click)="changePage(currentPage+1); $event.preventDefault()">Next</a>
-      </li>
+        <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" href="#" (click)="changePage(currentPage-1); $event.preventDefault()">Previous</a>
+        </li>
+        <li class="page-item" *ngIf="currentPage > 1">
+            <a class="page-link" href="#" (click)="changePage(currentPage-1); $event.preventDefault()">{{ currentPage-1 }}</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">{{ currentPage }}</span>
+        </li>
+        <li class="page-item" *ngIf="currentPage < totalPages.length">
+            <a class="page-link" href="#" (click)="changePage(currentPage+1); $event.preventDefault()">{{ currentPage+1 }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+            <a class="page-link" href="#" (click)="changePage(currentPage+1); $event.preventDefault()">Next</a>
+        </li>
     </ul>
   </nav>
 </div>
