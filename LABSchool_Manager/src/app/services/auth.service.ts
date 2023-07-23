@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private currentUserSubject: BehaviorSubject<string | null>;
@@ -17,49 +17,51 @@ export class AuthService {
 
   private getLocalUser(): string | null {
     const user = localStorage.getItem('currentUser');
-    return user ? JSON.parse(user).username : null; 
+    return user ? JSON.parse(user).username : null;
   }
-  
+
+  initCurrentUser() {
+    const user = this.getLocalUser();
+    this.currentUserSubject.next(user);
+  }
 
   login(emailOrUsername: string, password: string): Observable<boolean> {
-    const emailLogin$ = this.http.get<any>(`http://localhost:3000/users?email=${emailOrUsername}&password=${password}`)
+    const emailLogin$ = this.http
+      .get<any>(`http://localhost:3000/users?email=${emailOrUsername}&password=${password}`)
       .pipe(
-        map(user => {
-          if (user && user.length) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            this.currentUserSubject.next(user[0].username);
-            return true;
-          }
-          return false;
-        })
+        map((users) => users?.[0])
       );
 
-    const usernameLogin$ = this.http.get<any>(`http://localhost:3000/users?username=${emailOrUsername}&password=${password}`)
+    const usernameLogin$ = this.http
+      .get<any>(`http://localhost:3000/users?username=${emailOrUsername}&password=${password}`)
       .pipe(
-        map(user => {
-          if (user && user.length) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            this.currentUserSubject.next(user[0].username);
-            return true;
-          }
-          return false;
-        })
+        map((users) => users?.[0])
       );
 
-    return merge(emailLogin$, usernameLogin$);
+    return merge(emailLogin$, usernameLogin$).pipe(
+      map((user) => {
+        if (user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user.username);
+          return true;
+        }
+        return false;
+      })
+    );
   }
 
   register(username: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
     const user = { username, phone, birthdate, cpf, email, password };
-    return this.http.post<any>(`http://localhost:3000/users`, user)
-      .pipe(map(response => {
+    return this.http.post<any>('http://localhost:3000/users', user).pipe(
+      map((response) => {
         if (response) {
           localStorage.setItem('currentUser', JSON.stringify(response));
           this.currentUserSubject.next(response.username);
           return true;
         }
         return false;
-      }));
+      })
+    );
   }
 
   isLoggedIn(): boolean {
