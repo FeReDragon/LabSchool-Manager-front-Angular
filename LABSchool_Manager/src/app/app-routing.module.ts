@@ -5,10 +5,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
-
-    { path: 'login', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'register', component: RegisterComponent },
-
+  {
+    path: '',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
@@ -24,12 +24,14 @@ const routes: Routes = [
     loadChildren: () => import('./pedagogic-support/pedagogic-support.module').then(m => m.PedagogicSupportModule),
     canActivate: [authGuard] // Adicionando o guard
   },
-  { path: 'not-found', 
-  component: NotFoundComponent },
-  { path: '**', redirectTo: 'not-found' }
-  
- 
-  // outras rotas vão aqui...
+  { 
+    path: 'not-found', 
+    component: NotFoundComponent 
+  },
+  { 
+    path: '**', 
+    redirectTo: 'not-found' 
+  }
 ];
 
 @NgModule({
