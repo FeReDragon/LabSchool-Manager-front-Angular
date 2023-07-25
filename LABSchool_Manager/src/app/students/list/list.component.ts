@@ -17,13 +17,14 @@ interface Student {
 })
 export class ListComponent implements OnInit {
   students: Student[] = [];
+  filteredStudents: Student[] = [];
   paginatedStudents: Student[] = [];
   filterText: string = '';
   currentPage: number = 1;
   itemsPerPage: number = 12;
   totalItems: number = 0;
   totalPages: number[] = [];
-  loadingError: boolean = false; // Nova propriedade
+  loadingError: boolean = false;
 
   constructor(private studentService: StudentService) { }
 
@@ -34,11 +35,12 @@ export class ListComponent implements OnInit {
   getStudents(): void {
     this.studentService.getStudents().subscribe((data: any) => {
       this.students = data;
+      this.filteredStudents = this.students;
       if (this.students.length === 0) {
         this.loadingError = true;
       }
       this.students.sort((a: Student, b: Student) => a.nome.localeCompare(b.nome));
-      this.totalItems = this.students.length;
+      this.totalItems = this.filteredStudents.length;
       this.setTotalPages();
       this.paginateStudents();
     }, err => {
@@ -54,17 +56,21 @@ export class ListComponent implements OnInit {
   paginateStudents(): void {
     let startItem = (this.currentPage - 1) * this.itemsPerPage;
     let endItem = this.currentPage * this.itemsPerPage;
-    this.paginatedStudents = this.students.slice(startItem, endItem);
+    this.paginatedStudents = this.filteredStudents.slice(startItem, endItem);
   }
 
   changePage(newPage: number): void {
     this.currentPage = newPage;
     this.paginateStudents();
   }
+
+  onFilterChange(newFilter: string): void {
+    this.filterText = newFilter;
+    this.filteredStudents = this.students.filter((student: Student) => student.nome.toLowerCase().includes(this.filterText.toLowerCase()));
+    this.totalItems = this.filteredStudents.length;
+    this.setTotalPages();
+    this.paginateStudents();
+  }
 }
-
-
-
-
 
 

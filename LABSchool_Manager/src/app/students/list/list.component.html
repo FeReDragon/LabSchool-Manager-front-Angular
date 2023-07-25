@@ -4,14 +4,14 @@
   <button class="btn btn-info my-2" routerLink="/students/create">
     <i class="fas fa-plus"></i> Cadastrar novo aluno
   </button>
-  <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno" [(ngModel)]="filterText">
+  <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno" [(ngModel)]="filterText" (ngModelChange)="onFilterChange($event)">
   
   <div *ngIf="loadingError" class="alert alert-danger mt-4">
     <strong>Erro:</strong> Não foi possível carregar os dados dos alunos.
   </div>
 
   <div *ngIf="!loadingError" class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" *ngFor="let student of paginatedStudents | filter: filterText">
+    <div class="col" *ngFor="let student of paginatedStudents">
       <div class="card h-100">
         <i class="fas fa-user-graduate fa-5x d-flex justify-content-center align-items-center my-4"></i>
         <div class="card-body card-with-background">
@@ -24,6 +24,7 @@
       </div>
     </div>
   </div>
+  
   <nav aria-label="Page navigation" class="d-flex justify-content-center my-3">
     <ul class="pagination">
         <li class="page-item" [class.disabled]="currentPage === 1">
@@ -44,6 +45,7 @@
     </ul>
   </nav>
 </div>
+
 
 
 
