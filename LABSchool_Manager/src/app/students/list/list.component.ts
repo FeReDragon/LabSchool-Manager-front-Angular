@@ -23,6 +23,7 @@ export class ListComponent implements OnInit {
   itemsPerPage: number = 12;
   totalItems: number = 0;
   totalPages: number[] = [];
+  loadingError: boolean = false; // Nova propriedade
 
   constructor(private studentService: StudentService) { }
 
@@ -33,10 +34,15 @@ export class ListComponent implements OnInit {
   getStudents(): void {
     this.studentService.getStudents().subscribe((data: any) => {
       this.students = data;
+      if (this.students.length === 0) {
+        this.loadingError = true;
+      }
       this.students.sort((a: Student, b: Student) => a.nome.localeCompare(b.nome));
       this.totalItems = this.students.length;
       this.setTotalPages();
       this.paginateStudents();
+    }, err => {
+      this.loadingError = true;
     });
   }
 
@@ -56,6 +62,7 @@ export class ListComponent implements OnInit {
     this.paginateStudents();
   }
 }
+
 
 
 

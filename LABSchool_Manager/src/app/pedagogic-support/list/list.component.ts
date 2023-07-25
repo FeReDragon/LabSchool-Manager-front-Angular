@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
 import { PedagogicSupportService } from '../../services/pedagogic-support.service';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 interface Acompanhamento {
   titulo: string;
@@ -26,6 +25,7 @@ export class ListComponent implements OnInit {
   itemsPerPage: number = 9; // Quantidade de items por página que deseja
   totalItems: number = 0;
   totalPages: number[] = [];
+  loadingError: boolean = false; // Nova propriedade
 
   constructor(private pedagogicSupportService: PedagogicSupportService) { }
 
@@ -46,9 +46,14 @@ export class ListComponent implements OnInit {
       })
     ).subscribe((acompanhamentos: Acompanhamento[]) => {
       this.acompanhamentos = acompanhamentos;
+      if (this.acompanhamentos.length === 0) {
+        this.loadingError = true;
+      }
       this.totalItems = this.acompanhamentos.length;
       this.setTotalPages();
       this.paginateAcompanhamentos();
+    }, err => {
+      this.loadingError = true;
     });
   }
 
