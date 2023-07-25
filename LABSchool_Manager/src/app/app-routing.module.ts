@@ -26,7 +26,8 @@ const routes: Routes = [
   },
   { 
     path: 'not-found', 
-    component: NotFoundComponent 
+    component: NotFoundComponent,
+    canActivate: [authGuard]  // Adicionando o guard
   },
   { 
     path: '**', 
@@ -39,4 +40,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, merge } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class AuthService {
 
   private getLocalUser(): string | null {
     const user = localStorage.getItem('currentUser');
-    return user ? JSON.parse(user).username : null;
+    return user ? JSON.parse(user).username : null; // Usando username para o currentUser
   }
 
   initCurrentUser() {
@@ -25,29 +25,20 @@ export class AuthService {
     this.currentUserSubject.next(user);
   }
 
-  login(emailOrUsername: string, password: string): Observable<boolean> {
-    const emailLogin$ = this.http
-      .get<any>(`http://localhost:3000/users?email=${emailOrUsername}&password=${password}`)
+  login(email: string, password: string): Observable<boolean> {
+    return this.http
+      .get<any>(`http://localhost:3000/users?email=${email}&password=${password}`)
       .pipe(
-        map((users) => users?.[0])
+        map((users) => {
+          const user = users?.[0];
+          if (user) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user.username); // Atualizando o currentUser com o username do usuário
+            return true;
+          }
+          return false;
+        })
       );
-
-    const usernameLogin$ = this.http
-      .get<any>(`http://localhost:3000/users?username=${emailOrUsername}&password=${password}`)
-      .pipe(
-        map((users) => users?.[0])
-      );
-
-    return merge(emailLogin$, usernameLogin$).pipe(
-      map((user) => {
-        if (user) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user.username);
-          return true;
-        }
-        return false;
-      })
-    );
   }
 
   register(username: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
@@ -56,7 +47,7 @@ export class AuthService {
       map((response) => {
         if (response) {
           localStorage.setItem('currentUser', JSON.stringify(response));
-          this.currentUserSubject.next(response.username);
+          this.currentUserSubject.next(response.username); // Atualizando o currentUser com o username do usuário
           return true;
         }
         return false;
