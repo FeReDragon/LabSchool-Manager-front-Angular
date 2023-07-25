@@ -1,10 +1,10 @@
 <app-header></app-header>
-<div class="container my-5">
+<div class="container my-5 d-flex flex-column min-vh-100">
   <h1>Listagem de Acompanhamentos Pedagógicos</h1>
   <button class="btn btn-info my-2" routerLink="/pedagogic-support/create"> <i class="fas fa-plus"></i> Cadastrar novo acompanhamento</button>
   <input type="text" class="form-control mb-4" placeholder="Filtro pelo título do acompanhamento" [(ngModel)]="filtroTitulo" (input)="filtrarAcompanhamentos()">
 
-  <div *ngIf="loadingError" class="alert alert-danger mt-4">
+  <div *ngIf="loadingError" class="alert alert-danger mt-4 ">
     <strong>Erro:</strong> Não foi possível carregar os dados dos acompanhamentos.
   </div>
 
