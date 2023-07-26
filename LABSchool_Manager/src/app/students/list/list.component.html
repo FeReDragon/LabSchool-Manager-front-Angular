@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container my-5 flex-column min-vh-100">
   <h1>Listagem de Alunos</h1>
-  <button class="btn btn-info my-2" routerLink="/students/create">
+  <button class="btn btn-info my-2" routerLink="/alunos/criar">
     <i class="fas fa-plus"></i> Cadastrar novo aluno
   </button>
   <input type="text" class="form-control mb-4" placeholder="Filtro pelo nome do aluno" [(ngModel)]="filterText" (ngModelChange)="onFilterChange($event)">

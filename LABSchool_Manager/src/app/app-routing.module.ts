@@ -15,12 +15,12 @@ const routes: Routes = [
     canActivate: [authGuard] // Adicionando o guard
   },
   {
-    path: 'students',
+    path: 'alunos',
     loadChildren: () => import('./students/students.module').then(m => m.StudentsModule),
     canActivate: [authGuard] // Adicionando o guard
   },
   {
-    path: 'pedagogic-support',
+    path: 'acompanhamentos',
     loadChildren: () => import('./pedagogic-support/pedagogic-support.module').then(m => m.PedagogicSupportModule),
     canActivate: [authGuard] // Adicionando o guard
   },
