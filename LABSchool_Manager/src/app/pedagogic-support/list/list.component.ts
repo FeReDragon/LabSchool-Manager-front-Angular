@@ -46,9 +46,6 @@ export class ListComponent implements OnInit {
       })
     ).subscribe((acompanhamentos: Acompanhamento[]) => {
       this.acompanhamentos = acompanhamentos;
-      if (this.acompanhamentos.length === 0) {
-        this.loadingError = true;
-      }
       this.totalItems = this.acompanhamentos.length;
       this.setTotalPages();
       this.paginateAcompanhamentos();
@@ -56,6 +53,7 @@ export class ListComponent implements OnInit {
       this.loadingError = true;
     });
   }
+  
 
   trackByFn(index: number, item: any) {
     return item.id;
