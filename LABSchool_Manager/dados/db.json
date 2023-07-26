@@ -1,0 +1,546 @@
+{
+  "alunos": [
+    {
+      "nome": "Leonardo DiCaprio",
+      "telefone": "(48)99639-0001",
+      "dataNascimento": "1994-05-11",
+      "cpf": "111.222.333-44",
+      "nota": 8.5,
+      "id": 1
+    },
+    {
+      "nome": "Jennifer Lawrence",
+      "telefone": "(48)99639-0002",
+      "dataNascimento": "1990-08-15",
+      "cpf": "555.666.777-88",
+      "nota": 9.2,
+      "id": 2
+    },
+    {
+      "nome": "Tom Hanks",
+      "telefone": "(48)99639-0003",
+      "dataNascimento": "1967-07-09",
+      "cpf": "999.888.777-66",
+      "nota": 7.8,
+      "id": 3
+    },
+    {
+      "nome": "Scarlett Johansson",
+      "telefone": "(48)99639-0004",
+      "dataNascimento": "1984-11-22",
+      "cpf": "444.333.222-11",
+      "nota": 8.9,
+      "id": 4
+    },
+    {
+      "nome": "Brad Pitt",
+      "telefone": "(48)99639-0005",
+      "dataNascimento": "1963-12-18",
+      "cpf": "777.888.999-00",
+      "nota": 7,
+      "id": 5
+    },
+    {
+      "nome": "Meryl Streep",
+      "telefone": "(48)99639-0006",
+      "dataNascimento": "1949-06-22",
+      "cpf": "222.333.444-55",
+      "nota": 9.8,
+      "id": 6
+    },
+    {
+      "nome": "Johnny Depp",
+      "telefone": "(48)99639-0007",
+      "dataNascimento": "1963-06-09",
+      "cpf": "555.444.333-22",
+      "nota": 7.5,
+      "id": 7
+    },
+    {
+      "nome": "Angelina Jolie",
+      "telefone": "(48)99639-0008",
+      "dataNascimento": "1975-06-04",
+      "cpf": "111.222.333-00",
+      "nota": 8.1,
+      "id": 8
+    },
+    {
+      "nome": "Denzel Washington",
+      "telefone": "(48)99639-0009",
+      "dataNascimento": "1954-12-28",
+      "cpf": "999.888.777-11",
+      "nota": 7.9,
+      "id": 9
+    },
+    {
+      "nome": "Natalie Portman",
+      "telefone": "(48)99639-0010",
+      "dataNascimento": "1981-06-09",
+      "cpf": "222.333.444-66",
+      "nota": 9.6,
+      "id": 10
+    },
+    {
+      "nome": "Will Smith",
+      "telefone": "(48)99639-0011",
+      "dataNascimento": "1968-09-25",
+      "cpf": "777.888.999-11",
+      "nota": 8.7,
+      "id": 11
+    },
+    {
+      "nome": "Emma Stone",
+      "telefone": "(48)99639-0012",
+      "dataNascimento": "1988-11-06",
+      "cpf": "444.333.222-44",
+      "nota": 8.4,
+      "id": 12
+    },
+    {
+      "nome": "Robert Downey Jr.",
+      "telefone": "(48)99639-0013",
+      "dataNascimento": "1965-04-04",
+      "cpf": "111.222.333-66",
+      "nota": 7.2,
+      "id": 13
+    },
+    {
+      "nome": "Charlize Theron",
+      "telefone": "(48)99639-0014",
+      "dataNascimento": "1975-08-07",
+      "cpf": "555.666.777-44",
+      "nota": 8,
+      "id": 14
+    },
+    {
+      "nome": "Samuel L. Jackson",
+      "telefone": "(48)99639-0015",
+      "dataNascimento": "1948-12-21",
+      "cpf": "222.333.444-99",
+      "nota": 9,
+      "id": 15
+    },
+    {
+      "nome": "Cate Blanchett",
+      "telefone": "(48)99639-0016",
+      "dataNascimento": "1969-05-14",
+      "cpf": "999.888.777-22",
+      "nota": 9.1,
+      "id": 16
+    },
+    {
+      "nome": "Ryan Gosling",
+      "telefone": "(48)99639-0017",
+      "dataNascimento": "1980-11-12",
+      "cpf": "444.333.222-77",
+      "nota": 8.3,
+      "id": 17
+    },
+    {
+      "nome": "Julia Roberts",
+      "telefone": "(48)99639-0018",
+      "dataNascimento": "1967-10-28",
+      "cpf": "111.222.333-88",
+      "nota": 8.6,
+      "id": 18
+    },
+    {
+      "nome": "George Clooney",
+      "telefone": "(48)99639-0019",
+      "dataNascimento": "1961-05-06",
+      "cpf": "555.666.777-66",
+      "nota": 7.7,
+      "id": 19
+    },
+    {
+      "nome": "Anne Hathaway",
+      "telefone": "(48)99639-0020",
+      "dataNascimento": "1982-11-12",
+      "cpf": "222.333.444-44",
+      "nota": 8.8,
+      "id": 20
+    },
+    {
+      "nome": "Dwayne Johnson",
+      "telefone": "(48)99639-0021",
+      "dataNascimento": "1972-05-02",
+      "cpf": "999.888.777-00",
+      "nota": 8,
+      "id": 21
+    },
+    {
+      "nome": "Mila Kunis",
+      "telefone": "(48)99639-0022",
+      "dataNascimento": "1983-08-14",
+      "cpf": "444.333.222-00",
+      "nota": 9.3,
+      "id": 22
+    },
+    {
+      "nome": "Chris Hemsworth",
+      "telefone": "(48)99639-0023",
+      "dataNascimento": "1983-08-11",
+      "cpf": "111.222.333-55",
+      "nota": 8.2,
+      "id": 23
+    },
+    {
+      "nome": "Nicole Kidman",
+      "telefone": "(48)99639-0024",
+      "dataNascimento": "1967-06-20",
+      "cpf": "555.666.777-55",
+      "nota": 8.5,
+      "id": 24
+    },
+    {
+      "nome": "Ryan Reynolds",
+      "telefone": "(48)99639-0025",
+      "dataNascimento": "1976-10-23",
+      "cpf": "222.333.444-33",
+      "nota": 9.4,
+      "id": 25
+    },
+    {
+      "nome": "Halle Berry",
+      "telefone": "(48)99639-0026",
+      "dataNascimento": "1966-08-14",
+      "cpf": "999.888.777-88",
+      "nota": 8.1,
+      "id": 26
+    },
+    {
+      "nome": "Chadwick Boseman",
+      "telefone": "(48)99639-0027",
+      "dataNascimento": "1976-11-29",
+      "cpf": "444.333.222-11",
+      "nota": 7.9,
+      "id": 27
+    },
+    {
+      "nome": "Kate Winslet",
+      "telefone": "(48)99639-0028",
+      "dataNascimento": "1975-10-05",
+      "cpf": "111.222.333-44",
+      "nota": 9.7,
+      "id": 28
+    },
+    {
+      "nome": "Matt Damon",
+      "telefone": "(48)99639-0029",
+      "dataNascimento": "1970-10-08",
+      "cpf": "555.666.777-22",
+      "nota": 7.8,
+      "id": 29
+    },
+    {
+      "nome": "Emma Watson",
+      "telefone": "(48)99639-0030",
+      "dataNascimento": "1990-04-15",
+      "cpf": "222.333.444-55",
+      "nota": 9,
+      "id": 30
+    },
+    {
+      "nome": "Fernanda Migotto",
+      "telefone": "(48)99153-1000",
+      "dataNascimento": "1982-08-03",
+      "cpf": "111.000.777-39",
+      "nota": 9.5,
+      "id": 31
+    }
+  ],
+  "acompanhamentos": [
+    {
+      "alunoId": "1",
+      "usuarioId": "1",
+      "data": "2023-07-19",
+      "titulo": "Acompanhamento 1",
+      "descricao": "Acompanhamento gerado para test de funcionalidades",
+      "finalizado": false,
+      "id": 1
+    },
+    {
+      "alunoId": "2",
+      "usuarioId": "2",
+      "data": "2023-07-20",
+      "titulo": "Acompanhamento 2",
+      "descricao": "Acompanhamento gerado para avaliação de desempenho",
+      "finalizado": true,
+      "id": 2
+    },
+    {
+      "alunoId": "3",
+      "usuarioId": "3",
+      "data": "2023-07-20",
+      "titulo": "Acompanhamento 3",
+      "descricao": "Acompanhamento de apoio psicológico",
+      "finalizado": true,
+      "id": 3
+    },
+    {
+      "alunoId": "4",
+      "usuarioId": "4",
+      "data": "2023-07-21",
+      "titulo": "Acompanhamento 4",
+      "descricao": "Acompanhamento para orientação vocacional",
+      "finalizado": false,
+      "id": 4
+    },
+    {
+      "alunoId": "5",
+      "usuarioId": "5",
+      "data": "2023-07-21",
+      "titulo": "Acompanhamento 5",
+      "descricao": "Acompanhamento para melhorar habilidades de estudo",
+      "finalizado": false,
+      "id": 5
+    },
+    {
+      "alunoId": "6",
+      "usuarioId": "6",
+      "data": "2023-07-21",
+      "titulo": "Acompanhamento 6",
+      "descricao": "Acompanhamento para desenvolvimento de habilidades sociais",
+      "finalizado": true,
+      "id": 6
+    },
+    {
+      "alunoId": "7",
+      "usuarioId": "7",
+      "data": "2023-07-21",
+      "titulo": "Acompanhamento 7",
+      "descricao": "Acompanhamento para acompanhamento de atividades escolares",
+      "finalizado": false,
+      "id": 7
+    },
+    {
+      "alunoId": "8",
+      "usuarioId": "8",
+      "data": "2023-07-22",
+      "titulo": "Acompanhamento 8",
+      "descricao": "Acompanhamento para estimular a motivação acadêmica",
+      "finalizado": true,
+      "id": 8
+    },
+    {
+      "alunoId": "9",
+      "usuarioId": "9",
+      "data": "2023-07-22",
+      "titulo": "Acompanhamento 9",
+      "descricao": "Acompanhamento para apoio na escolha da carreira",
+      "finalizado": true,
+      "id": 9
+    },
+    {
+      "alunoId": "10",
+      "usuarioId": "10",
+      "data": "2023-07-23",
+      "titulo": "Acompanhamento 10",
+      "descricao": "Acompanhamento para identificar dificuldades de aprendizado",
+      "finalizado": false,
+      "id": 10
+    },
+    {
+      "alunoId": "11",
+      "usuarioId": "11",
+      "data": "2023-07-23",
+      "titulo": "Acompanhamento 11",
+      "descricao": "Acompanhamento para auxiliar na organização dos estudos",
+      "finalizado": true,
+      "id": 11
+    },
+    {
+      "alunoId": "12",
+      "usuarioId": "10",
+      "data": "2023-07-23",
+      "titulo": "Acompanhamento 12",
+      "descricao": "Acompanhamento para apoio psicológico",
+      "finalizado": false,
+      "id": 12
+    },
+    {
+      "alunoId": "13",
+      "usuarioId": "10",
+      "data": "2023-07-24",
+      "titulo": "Acompanhamento 13",
+      "descricao": "Acompanhamento para melhoria da autoestima",
+      "finalizado": false,
+      "id": 13
+    },
+    {
+      "alunoId": "14",
+      "usuarioId": "1",
+      "data": "2023-07-24",
+      "titulo": "Acompanhamento 14",
+      "descricao": "Acompanhamento para incentivar a participação em atividades escolares",
+      "finalizado": true,
+      "id": 14
+    },
+    {
+      "alunoId": "15",
+      "usuarioId": "5",
+      "data": "2023-07-25",
+      "titulo": "Acompanhamento 15",
+      "descricao": "Acompanhamento para orientação vocacional",
+      "finalizado": true,
+      "id": 15
+    },
+    {
+      "alunoId": "16",
+      "usuarioId": "9",
+      "data": "2023-07-25",
+      "titulo": "Acompanhamento 16",
+      "descricao": "Acompanhamento para desenvolvimento de habilidades sociais",
+      "finalizado": false,
+      "id": 16
+    },
+    {
+      "alunoId": "17",
+      "usuarioId": "1",
+      "data": "2023-07-25",
+      "titulo": "Acompanhamento 17",
+      "descricao": "Acompanhamento para apoio na escolha da carreira",
+      "finalizado": false,
+      "id": 17
+    },
+    {
+      "alunoId": "18",
+      "usuarioId": "10",
+      "data": "2023-07-26",
+      "titulo": "Acompanhamento 18",
+      "descricao": "Acompanhamento para identificar dificuldades de aprendizado",
+      "finalizado": true,
+      "id": 18
+    },
+    {
+      "alunoId": "19",
+      "usuarioId": "6",
+      "data": "2023-07-26",
+      "titulo": "Acompanhamento 19",
+      "descricao": "Acompanhamento para auxiliar na organização dos estudos",
+      "finalizado": true,
+      "id": 19
+    },
+    {
+      "alunoId": "20",
+      "usuarioId": "5",
+      "data": "2023-07-26",
+      "titulo": "Acompanhamento 20",
+      "descricao": "Acompanhamento para apoio psicológico",
+      "finalizado": false,
+      "id": 20
+    },
+    {
+      "alunoId": "31",
+      "usuarioId": "1",
+      "data": "2023-07-26",
+      "titulo": "Acompanhamento personalizado",
+      "descricao": "Acompanhamento para fins de desenvolvimento acadêmico ",
+      "finalizado": true,
+      "id": 21,
+      "alunoNome": "Fernanda Migotto",
+      "usuarioNome": "Fernando Aurélio"
+    }
+  ],
+  "users": [
+    {
+      "username": "Fernando Aurélio",
+      "telefone": "(48)99153-7777",
+      "dataNascimento": "1984-01-26",
+      "cpf": "111.000.777-33",
+      "email": "admin@admin.com",
+      "password": "10203040",
+      "id": 1
+    },
+    {
+      "username": "Walter White",
+      "telefone": "(48)99153-7778",
+      "dataNascimento": "1965-09-07",
+      "cpf": "444.333.222-66",
+      "email": "walter_white@example.com",
+      "password": "walter123",
+      "id": 2
+    },
+    {
+      "username": "Al Capone",
+      "telefone": "(48)99153-7779",
+      "dataNascimento": "1899-01-17",
+      "cpf": "777.888.999-00",
+      "email": "al_capone@example.com",
+      "password": "capone123",
+      "id": 3
+    },
+    {
+      "username": "Homer Simpson",
+      "telefone": "(48)99153-7780",
+      "dataNascimento": "1956-05-12",
+      "cpf": "222.333.444-77",
+      "email": "homer_simpson@example.com",
+      "password": "doh123",
+      "id": 4
+    },
+    {
+      "username": "Sherlock Holmes",
+      "telefone": "(48)99153-7781",
+      "dataNascimento": "1854-01-06",
+      "cpf": "999.888.777-22",
+      "email": "sherlock_holmes@example.com",
+      "password": "elementary123",
+      "id": 5
+    },
+    {
+      "username": "Vito Corleone",
+      "telefone": "(48)99153-7782",
+      "dataNascimento": "1891-12-07",
+      "cpf": "111.222.333-44",
+      "email": "vito_corleone@example.com",
+      "password": "godfather123",
+      "id": 6
+    },
+    {
+      "username": "James Bond",
+      "telefone": "(48)99153-7783",
+      "dataNascimento": "1920-11-11",
+      "cpf": "555.666.777-55",
+      "email": "james_bond@example.com",
+      "password": "007bond",
+      "id": 7
+    },
+    {
+      "username": "Mickey Mouse",
+      "telefone": "(48)99153-7784",
+      "dataNascimento": "1928-11-18",
+      "cpf": "222.333.444-55",
+      "email": "mickey_mouse@example.com",
+      "password": "mickey123",
+      "id": 8
+    },
+    {
+      "username": "Luke Skywalker",
+      "telefone": "(48)99153-7785",
+      "dataNascimento": "1951-09-25",
+      "cpf": "999.888.777-33",
+      "email": "luke_skywalker@example.com",
+      "password": "force123",
+      "id": 9
+    },
+    {
+      "username": "Indiana Jones",
+      "telefone": "(48)99153-7786",
+      "dataNascimento": "1899-02-27",
+      "cpf": "444.333.222-11",
+      "email": "indiana_jones@example.com",
+      "password": "adventure123",
+      "id": 10
+    },
+    {
+      "username": "Hannibal Lecter",
+      "telefone": "(48)99153-7787",
+      "dataNascimento": "1933-01-20",
+      "cpf": "111.222.333-66",
+      "email": "hannibal_lecter@example.com",
+      "password": "hannibal123",
+      "id": 11
+    }
+  ]
+}

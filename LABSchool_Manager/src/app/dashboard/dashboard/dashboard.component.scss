@@ -1,0 +1,65 @@
+.card-with-background {
+    background-image: url('https://ahemder.org.tr/wp-content/uploads/2021/04/kongre.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    
+    height: 150px;
+  }
+  .bar-chart-container {
+    height: 100vh;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+/* Estilos padrão para telas grandes */
+.card .card-title {
+  font-size: 24px;
+}
+
+.card .card-text {
+  font-size: 16px;
+}
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+  .card .card-title {
+      font-size: 16px;
+  }
+
+  .card .card-text {
+      font-size: 14px;
+  }
+}
+/* CSS */
+h2 {
+  font-size: 1.5rem; /* Tamanho padrão para telas maiores que 464px */
+}
+.card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 0 auto; /* Centraliza o card no meio da tela */
+}
+
+@media (max-width: 464px) {
+  h2 {
+    font-size: 1.0rem; /* Tamanho para telas menores ou iguais a 464px */
+  }
+  .card {
+    margin-left: 0px; 
+    margin-right: 0px; 
+}
+}
+
+
+
+  
+  
+  
