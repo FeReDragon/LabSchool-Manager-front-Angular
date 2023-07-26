@@ -51,3 +51,18 @@ Se você tem alguma dúvida ou deseja discutir algo sobre o projeto, sinta-se à
 
 Esperamos que você encontre este projeto útil para aprender sobre o desenvolvimento web moderno com Angular e Bootstrap!
  
+
+----------------------------------------------------------------------
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-1.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-2.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-3.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-4.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-5.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-6.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-7.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-8.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-9.png" width="300" style="margin: 5px;">
+  <img src="/LABSchool_Manager/src//assets//img/layout-10.png" width="300" style="margin: 5px;">
+</div>
