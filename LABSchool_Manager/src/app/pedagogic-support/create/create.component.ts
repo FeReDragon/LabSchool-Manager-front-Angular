@@ -12,8 +12,13 @@ export class CreateComponent implements OnInit {
   acompanhamentoForm: FormGroup;
   alunos: any[] = [{ id: '', nome: 'Selecione um aluno' }]; // Adicionando a opção "Selecione um aluno."
   pedagogos: any[] = [{ id: '', username: 'Selecione um pedagogo' }]; // Adicionando a opção "Selecione um pedagogo."
+  formError: string = ''; // Variable to store the form error message
 
-  constructor(private formBuilder: FormBuilder, private pedagogicSupportService: PedagogicSupportService, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private pedagogicSupportService: PedagogicSupportService,
+    private router: Router
+  ) {
     this.acompanhamentoForm = this.formBuilder.group({
       aluno: ['', Validators.required],
       pedagogo: ['', Validators.required],
@@ -22,7 +27,6 @@ export class CreateComponent implements OnInit {
       descricaoAcompanhamento: ['', Validators.required],
       finalizado: [false]
     });
-
   }
 
   ngOnInit(): void {
@@ -59,8 +63,11 @@ export class CreateComponent implements OnInit {
 
   salvarAcompanhamento(): void {
     if (this.acompanhamentoForm.invalid) {
+      this.formError = 'Por favor, preencha todos os campos corretamente.';
       return;
     }
+
+    this.formError = ''; // Reset the form error message before saving
 
     const acompanhamento = {
       alunoId: this.acompanhamentoForm.get('aluno')?.value,
@@ -74,12 +81,10 @@ export class CreateComponent implements OnInit {
     this.pedagogicSupportService.salvarAcompanhamento(acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento salvo com sucesso');
-        this.router.navigate(['/pedagogic-support']);
+        this.router.navigate(['/acompanhamentos']); 
       },
       (error: any) => {
         console.error('Erro ao salvar o acompanhamento', error);
-        // You can handle the error case here, if needed.
-        // For example, you can show an error message to the user.
       }
     );
   }
@@ -95,6 +100,5 @@ export class CreateComponent implements OnInit {
     return formControl ? formControl.valid && (formControl.dirty || formControl.touched) : false;
   }
 }
-
 
 

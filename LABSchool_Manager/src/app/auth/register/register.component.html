@@ -17,20 +17,20 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label for="phone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="phone" formControlName="phone"
-                  [class.is-invalid]="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched"
-                  [class.is-valid]="!registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched">
-                <div *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched" class="invalid-feedback">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="telefone" formControlName="telefone"
+                  [class.is-invalid]="registerForm.controls['telefone'].invalid && registerForm.controls['telefone'].touched"
+                  [class.is-valid]="!registerForm.controls['telefone'].invalid && registerForm.controls['telefone'].touched">
+                <div *ngIf="registerForm.controls['telefone'].invalid && registerForm.controls['telefone'].touched" class="invalid-feedback">
                   O telefone é obrigatório ex (00)00000-0000.
                 </div>
               </div>
               <div class="mb-3">
-                <label for="birthdate" class="form-label">Data de Nascimento</label>
-                <input type="date" class="form-control" id="birthdate" formControlName="birthdate"
-                  [class.is-invalid]="registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched"
-                  [class.is-valid]="!registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched">
-                <div *ngIf="registerForm.controls['birthdate'].invalid && registerForm.controls['birthdate'].touched" class="invalid-feedback">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataNascimento" formControlName="dataNascimento"
+                  [class.is-invalid]="registerForm.controls['dataNascimento'].invalid && registerForm.controls['dataNascimento'].touched"
+                  [class.is-valid]="!registerForm.controls['dataNascimento'].invalid && registerForm.controls['dataNascimento'].touched">
+                <div *ngIf="registerForm.controls['dataNascimento'].invalid && registerForm.controls['dataNascimento'].touched" class="invalid-feedback">
                   A data de nascimento é obrigatória.
                 </div>
               </div>

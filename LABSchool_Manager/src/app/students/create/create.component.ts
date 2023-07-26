@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
       () => {
         this.isLoading = false;
         console.log('Aluno cadastrado com sucesso');
-        this.router.navigate(['/students']);
+        this.router.navigate(['/alunos']);
       },
       (error: any) => {
         this.isLoading = false;

@@ -20,8 +20,8 @@ export class RegisterComponent {
   ) {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\)\d\d{4}-\d{4}$/)]],
-      birthdate: ['', Validators.required],
+      telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\)\d\d{4}-\d{4}$/)]],
+      dataNascimento: ['', Validators.required],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -46,8 +46,8 @@ export class RegisterComponent {
     this.isLoading = true;
     this.authService.register(
       this.registerForm.value.username,
-      this.registerForm.value.phone,
-      this.registerForm.value.birthdate,
+      this.registerForm.value.telefone,
+      this.registerForm.value.dataNascimento,
       this.registerForm.value.cpf,
       this.registerForm.value.email,
       this.registerForm.value.password

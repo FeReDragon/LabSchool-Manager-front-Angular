@@ -41,8 +41,8 @@ export class AuthService {
       );
   }
 
-  register(username: string, phone: string, birthdate: Date, cpf: string, email: string, password: string): Observable<boolean> {
-    const user = { username, phone, birthdate, cpf, email, password };
+  register(username: string, telefone: string, dataNascimento: Date, cpf: string, email: string, password: string): Observable<boolean> {
+    const user = { username, telefone, dataNascimento, cpf, email, password };
     return this.http.post<any>('http://localhost:3000/users', user).pipe(
       map((response) => {
         if (response) {
