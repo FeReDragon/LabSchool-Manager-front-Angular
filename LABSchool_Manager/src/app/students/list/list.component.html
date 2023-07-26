@@ -17,7 +17,7 @@
         <div class="card-body card-with-background">
           <h4 class="card-title d-flex justify-content-center align-items-center">{{ student.nome }}</h4>
           <p class="card-text"><i class="fas fa-phone"></i>  {{ student.telefone }}</p>
-          <p class="card-text"><i class="fas fa-calendar-alt"></i> {{ student.dataNascimento }}</p>
+          <p class="card-text"><i class="fas fa-calendar-alt"></i> {{ student.dataNascimento | date:'dd/MM/yyyy' }}</p>
           <p class="card-text"><i class="fas fa-id-card"></i> {{ student.cpf }}</p>
           <p class="card-text"><i class="fas fa-star"></i> Nota: {{ student.nota }}</p>
         </div>
