@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PedagogicSupportService } from '../../services/pedagogic-support.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-create',
@@ -9,18 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  alunos: any[] = [];
-  pedagogos: any[] = [];
+  acompanhamentoForm: FormGroup;
+  alunos: any[] = [{ id: '', nome: 'Selecione um aluno' }]; // Adicionando a opção "Selecione um aluno."
+  pedagogos: any[] = [{ id: '', username: 'Selecione um pedagogo' }]; // Adicionando a opção "Selecione um pedagogo."
+  formError: string = ''; // Variable to store the form error message
 
-  selectedAluno: number = 0;
-  selectedPedagogo: number = 0;
-  dataAcompanhamento: string = '';
-  tituloAcompanhamento: string = '';
-  descricaoAcompanhamento: string = '';
-  finalizado: boolean = false;
-
-  constructor(private pedagogicSupportService: PedagogicSupportService, private router: Router) { }
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private pedagogicSupportService: PedagogicSupportService,
+    private router: Router
+  ) {
+    this.acompanhamentoForm = this.formBuilder.group({
+      aluno: ['', Validators.required],
+      pedagogo: ['', Validators.required],
+      dataAcompanhamento: [this.getCurrentDate(), Validators.required],
+      tituloAcompanhamento: ['', Validators.required],
+      descricaoAcompanhamento: ['', Validators.required],
+      finalizado: [false]
+    });
+  }
 
   ngOnInit(): void {
     this.getAlunos();
@@ -55,23 +62,43 @@ export class CreateComponent implements OnInit {
   }
 
   salvarAcompanhamento(): void {
+    if (this.acompanhamentoForm.invalid) {
+      this.formError = 'Por favor, preencha todos os campos corretamente.';
+      return;
+    }
+
+    this.formError = ''; // Reset the form error message before saving
+
     const acompanhamento = {
-      alunoId: this.selectedAluno,
-      usuarioId: this.selectedPedagogo,
-      data: this.dataAcompanhamento,
-      titulo: this.tituloAcompanhamento,
-      descricao: this.descricaoAcompanhamento,
-      finalizado: this.finalizado
+      alunoId: this.acompanhamentoForm.get('aluno')?.value,
+      usuarioId: this.acompanhamentoForm.get('pedagogo')?.value,
+      data: this.acompanhamentoForm.get('dataAcompanhamento')?.value,
+      titulo: this.acompanhamentoForm.get('tituloAcompanhamento')?.value,
+      descricao: this.acompanhamentoForm.get('descricaoAcompanhamento')?.value,
+      finalizado: this.acompanhamentoForm.get('finalizado')?.value
     };
 
     this.pedagogicSupportService.salvarAcompanhamento(acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento salvo com sucesso');
-        this.router.navigate(['/pedagogic-support']);
+        this.router.navigate(['/acompanhamentos']); 
       },
       (error: any) => {
         console.error('Erro ao salvar o acompanhamento', error);
       }
     );
-    }    
+  }
+
+  isFieldInvalid(field: string): boolean {
+    const formControl = this.acompanhamentoForm.get(field);
+    return formControl ? formControl.invalid && (formControl.dirty || formControl.touched) : false;
+  }
+
+  // Implementação da função para verificar se um campo está válido
+  isFieldValid(field: string): boolean {
+    const formControl = this.acompanhamentoForm.get(field);
+    return formControl ? formControl.valid && (formControl.dirty || formControl.touched) : false;
+  }
 }
+
+

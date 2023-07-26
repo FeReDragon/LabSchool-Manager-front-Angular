@@ -1,31 +1,59 @@
 <app-header></app-header>
 
-<div class="container mt-5">
+<div class="container my-5 d-flex flex-column min-vh-100">
   <h2 class="mb-4">Cadastro de Alunos</h2>
-  <form (ngSubmit)="salvarAluno()">
+  <form [formGroup]="alunoForm" (ngSubmit)="salvarAluno()" novalidate>
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" placeholder="Nome" [(ngModel)]="alunos.nome" name="nome">
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome"
+        [class.is-invalid]="alunoForm.controls['nome'].invalid && alunoForm.controls['nome'].touched"
+        [class.is-valid]="alunoForm.controls['nome'].valid && alunoForm.controls['nome'].touched">
+      <div *ngIf="alunoForm.controls['nome'].invalid && alunoForm.controls['nome'].touched" class="invalid-feedback">
+        O nome é obrigatório.
+      </div>
     </div>
     <div class="form-group">
       <label for="telefone">Telefone:</label>
-      <input type="text" class="form-control" id="telefone" placeholder="Telefone" [(ngModel)]="alunos.telefone" name="telefone">
+      <input type="text" class="form-control" id="telefone" placeholder="Telefone" formControlName="telefone"
+        [class.is-invalid]="alunoForm.controls['telefone'].invalid && alunoForm.controls['telefone'].touched"
+        [class.is-valid]="alunoForm.controls['telefone'].valid && alunoForm.controls['telefone'].touched">
+      <div *ngIf="alunoForm.controls['telefone'].invalid && alunoForm.controls['telefone'].touched" class="invalid-feedback">
+        O telefone é obrigatório nesse fomato (00)00000-0000.
+      </div>
     </div>
     <div class="form-group">
       <label for="dataNascimento">Data de Nascimento:</label>
-      <input type="date" class="form-control" id="dataNascimento" placeholder="Data de nascimento" [(ngModel)]="alunos.dataNascimento" name="dataNascimento">
+      <input type="date" class="form-control" id="dataNascimento" placeholder="Data de nascimento" formControlName="dataNascimento"
+        [class.is-invalid]="alunoForm.controls['dataNascimento'].invalid && alunoForm.controls['dataNascimento'].touched"
+        [class.is-valid]="alunoForm.controls['dataNascimento'].valid && alunoForm.controls['dataNascimento'].touched">
+      <div *ngIf="alunoForm.controls['dataNascimento'].invalid && alunoForm.controls['dataNascimento'].touched" class="invalid-feedback">
+        A data de nascimento é obrigatória.
+      </div>      
     </div>
     <div class="form-group">
       <label for="cpf">CPF:</label>
-      <input type="text" class="form-control" id="cpf" placeholder="CPF" [(ngModel)]="alunos.cpf" name="cpf">
+      <input type="text" class="form-control" id="cpf" placeholder="CPF" formControlName="cpf"
+        [class.is-invalid]="alunoForm.controls['cpf'].invalid && alunoForm.controls['cpf'].touched"
+        [class.is-valid]="alunoForm.controls['cpf'].valid && alunoForm.controls['cpf'].touched">
+      <div *ngIf="alunoForm.controls['cpf'].invalid && alunoForm.controls['cpf'].touched" class="invalid-feedback">
+        O CPF é obrigatório e deve estar no formato 000.000.000-00.
+      </div>
     </div>
     <div class="form-group">
       <label for="nota">Nota:</label>
-      <input type="number" class="form-control" id="nota" placeholder="Nota" [(ngModel)]="alunos.nota" name="nota">
+      <input type="number" class="form-control" id="nota" placeholder="Nota" formControlName="nota"
+        [class.is-invalid]="alunoForm.controls['nota'].invalid && alunoForm.controls['nota'].touched"
+        [class.is-valid]="alunoForm.controls['nota'].valid && alunoForm.controls['nota'].touched">
+      <div *ngIf="alunoForm.controls['nota'].invalid && alunoForm.controls['nota'].touched" class="invalid-feedback">
+        A nota é obrigatória e deve ser um valor numérico entre 0-10.
+      </div>
     </div>
-    <div class="mt-4">
-      <button type="submit" class="btn btn-primary mr-3">Salvar</button>
-      <button routerLink="/students" class="btn btn-secondary">Voltar para a lista de alunos</button>
+    <div class="my-4">
+      <button type="submit" class="btn btn-info mr-2 my-2"><i class="fas fa-save"></i> Salvar</button>
+      <button routerLink="/alunos" class="btn btn-secondary mx-2 my-2"><i class="fas fa-arrow-left"></i> Voltar para a lista de alunos</button>
     </div>
+    
   </form>
 </div>
+
+

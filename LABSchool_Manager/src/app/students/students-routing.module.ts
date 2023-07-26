@@ -6,7 +6,7 @@ import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   { path: '', component: ListComponent },
-  { path: 'create', component: CreateComponent }
+  { path: 'criar', component: CreateComponent }
 ];
 
 @NgModule({
