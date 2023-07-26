@@ -47,7 +47,7 @@ export class AuthService {
       map((response) => {
         if (response) {
           localStorage.setItem('currentUser', JSON.stringify(response));
-          this.currentUserSubject.next(response.username); // Atualizando o currentUser com o username do usuário
+          this.currentUserSubject.next(response.username); // Continua atualizando o currentUser com o username
           return true;
         }
         return false;
