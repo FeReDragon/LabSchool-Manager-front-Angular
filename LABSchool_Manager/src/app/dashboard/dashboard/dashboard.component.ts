@@ -74,14 +74,21 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       const atendimentosPorDia: any = {};
       for (const atendimento of acompanhamentos) {
         const data = atendimento.data.split('T')[0];
-        if (!atendimentosPorDia[data]) {
-          atendimentosPorDia[data] = 0;
+        const dataFormatada = this.formatarData(data);
+        if (!atendimentosPorDia[dataFormatada]) {
+          atendimentosPorDia[dataFormatada] = 0;
         }
-        atendimentosPorDia[data]++;
+        atendimentosPorDia[dataFormatada]++;
       }
       this.atendimentosPorDia = Object.entries(atendimentosPorDia).map(([data, quantidade]) => ({ data, quantidade: Number(quantidade) }));
-      this.createBarChart(); // Chame a função para criar o gráfico de barras após receber os dados
+      this.createBarChart();
     });
   }
+
+  formatarData(data: string): string {
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}/${mes}/${ano}`;
+  }
 }
+
 
