@@ -11,6 +11,7 @@ export class EditComponent implements OnInit {
   acompanhamento: any = {};
   alunos: any[] = [];
   pedagogos: any[] = [];
+  formInvalid: boolean = false;
 
   constructor(
     private pedagogicSupportService: PedagogicSupportService,
@@ -64,6 +65,11 @@ export class EditComponent implements OnInit {
   }
 
   salvarAcompanhamento(): void {
+    if (!this.acompanhamento.titulo || !this.acompanhamento.descricao) {
+      this.formInvalid = true;
+      return;
+    }
+  
     this.pedagogicSupportService.atualizarAcompanhamento(this.acompanhamento).subscribe(
       () => {
         console.log('Acompanhamento atualizado com sucesso');
@@ -73,7 +79,7 @@ export class EditComponent implements OnInit {
         console.error('Erro ao atualizar o acompanhamento', error);
       }
     );
-  }
+  }  
 }
 
 
