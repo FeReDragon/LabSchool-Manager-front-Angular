@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
   totalItems: number = 0;
   totalPages: number[] = [];
   loadingError: boolean = false; // Nova propriedade
+  searchError: boolean = false; // Nova propriedade
 
   constructor(private pedagogicSupportService: PedagogicSupportService) { }
 
@@ -37,11 +38,14 @@ export class ListComponent implements OnInit {
     this.pedagogicSupportService.getAcompanhamentos().pipe(
       map((acompanhamentos: Acompanhamento[]) => {
         if (this.filtroTitulo.trim() === '') {
+          this.searchError = false; // Resetar a mensagem de erro se o filtro estiver vazio
           return acompanhamentos;
         } else {
-          return acompanhamentos.filter(acompanhamento =>
+          let filtered = acompanhamentos.filter(acompanhamento =>
             acompanhamento.titulo.toLowerCase().includes(this.filtroTitulo.trim().toLowerCase())
           );
+          this.searchError = filtered.length === 0; // Setar a mensagem de erro se nenhum acompanhamento foi encontrado
+          return filtered;
         }
       })
     ).subscribe((acompanhamentos: Acompanhamento[]) => {
@@ -53,7 +57,6 @@ export class ListComponent implements OnInit {
       this.loadingError = true;
     });
   }
-  
 
   trackByFn(index: number, item: any) {
     return item.id;
