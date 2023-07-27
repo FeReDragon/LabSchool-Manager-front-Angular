@@ -9,7 +9,10 @@
   <div *ngIf="loadingError" class="alert alert-danger mt-4">
     <strong>Erro:</strong> Não foi possível carregar os dados dos alunos.
   </div>
-
+  <div *ngIf="searchError" class="alert alert-warning mt-4">
+    <strong>Atenção:</strong> Nenhum aluno foi encontrado com o termo de pesquisa fornecido.
+  </div>
+  
   <div *ngIf="!loadingError" class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col" *ngFor="let student of paginatedStudents">
       <div class="card h-100">

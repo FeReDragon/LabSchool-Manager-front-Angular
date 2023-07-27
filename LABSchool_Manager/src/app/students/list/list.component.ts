@@ -25,6 +25,7 @@ export class ListComponent implements OnInit {
   totalItems: number = 0;
   totalPages: number[] = [];
   loadingError: boolean = false;
+  searchError: boolean = false;
 
   constructor(private studentService: StudentService) { }
 
@@ -68,6 +69,9 @@ export class ListComponent implements OnInit {
     this.filterText = newFilter;
     this.filteredStudents = this.students.filter((student: Student) => student.nome.toLowerCase().includes(this.filterText.toLowerCase()));
     this.totalItems = this.filteredStudents.length;
+    
+    this.searchError = this.totalItems === 0;
+
     this.setTotalPages();
     this.paginateStudents();
   }
