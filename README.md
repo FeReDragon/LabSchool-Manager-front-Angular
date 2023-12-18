@@ -1,7 +1,4 @@
-# Avalicao-modulo2-FullStack-Senai
-
-
-LabSchool Manager
+#LabSchool Manager
 
 LABScool Manager é um sistema de gerenciamento escolar que permite administrar os usuários, acompanhar o desempenho dos alunos, gerenciar o registro de presenças e atendimentos, e monitorar várias outras informações relevantes para o ambiente escolar. Desenvolvido em Angular, este projeto serve como um modelo de aplicação web moderna e responsiva.
 
